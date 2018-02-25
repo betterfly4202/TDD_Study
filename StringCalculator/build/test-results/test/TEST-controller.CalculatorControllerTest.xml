@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controller.CalculatorControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-02-25T06:51:23" hostname="betterfly.local" time="0.002">
+  <properties/>
+  <testcase name="덧셈" classname="controller.CalculatorControllerTest" time="0.001"/>
+  <testcase name="뺄셈" classname="controller.CalculatorControllerTest" time="0.0"/>
+  <system-out><![CDATA[setUp
+덧셈
+setUp
+뺄셈
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

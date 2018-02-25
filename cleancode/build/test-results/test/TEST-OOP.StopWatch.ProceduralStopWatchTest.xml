@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="OOP.StopWatch.ProceduralStopWatchTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-02-25T07:21:42" hostname="betterfly.local" time="0.103">
+  <properties/>
+  <testcase name="should_return_elapsed_millis_second" classname="OOP.StopWatch.ProceduralStopWatchTest" time="0.103"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

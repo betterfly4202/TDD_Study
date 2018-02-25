@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="handler.CalculatorHandlerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-02-25T06:51:23" hostname="betterfly.local" time="0.002">
+  <properties/>
+  <testcase name="계산기_실행" classname="handler.CalculatorHandlerTest" time="0.0"/>
+  <testcase name="최종_계산기" classname="handler.CalculatorHandlerTest" time="0.001"/>
+  <system-out><![CDATA[setUp
+setUp
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
