@@ -36,7 +36,22 @@ public class CalculatorDto {
             public double Calculator(double a, double b) {
                 return a / b;
             }
+        },
+
+        CUSTOM_PLUS(";"){
+            @Override
+            public double Calculator(double a, double b) {
+                return a+b;
+            }
+        },
+
+        CUSTOM_PLUS_SUB(","){
+            @Override
+            public double Calculator(double a, double b) {
+                return a+b;
+            }
         };
+
 
         private final String operator;
 
@@ -56,6 +71,8 @@ public class CalculatorDto {
             requestMapping.put(MINUS.getOperator(), MINUS);
             requestMapping.put(MULTIPLY.getOperator(), MULTIPLY);
             requestMapping.put(DIVIDE.getOperator(), DIVIDE);
+            requestMapping.put(CUSTOM_PLUS.getOperator(), CUSTOM_PLUS);
+            requestMapping.put(CUSTOM_PLUS_SUB.getOperator(), CUSTOM_PLUS_SUB);
         }
 
         // 연산자 추출

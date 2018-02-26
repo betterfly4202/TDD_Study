@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dto.CalculatorDtoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-02-25T06:51:23" hostname="betterfly.local" time="0.052">
-  <properties/>
-  <testcase name="연산자입력후_결과예측" classname="dto.CalculatorDtoTest" time="0.052"/>
-  <system-out><![CDATA[initialized...
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

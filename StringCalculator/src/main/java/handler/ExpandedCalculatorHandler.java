@@ -6,5 +6,5 @@ package handler;
  */
 
 public class ExpandedCalculatorHandler {
-    
+
 }
