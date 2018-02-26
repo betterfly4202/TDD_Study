@@ -484,32 +484,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StopWatchTest.should_return_elapsed_nano_second">
-    <configuration name="ProceduralStopWatchTest.should_return_elapsed_millis_second" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="OOP.StopWatch.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="betterfly_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="OOP.StopWatch" />
-      <option name="MAIN_CLASS_NAME" value="OOP.StopWatch.ProceduralStopWatchTest" />
-      <option name="METHOD_NAME" value="should_return_elapsed_millis_second" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
+  <component name="RunManager" selected="Gradle.cleancode [clean]">
     <configuration name="ProceduralStopWatchTest.should_return_elapsed_nano_second" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -665,6 +640,24 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="cleancode [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+    </configuration>
     <configuration name="cleancode [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -683,24 +676,24 @@
       </ExternalSystemSettings>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Gradle.cleancode [clean]" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ProceduralStopWatchTest.should_return_elapsed_millis_second" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ProceduralStopWatchTest.should_return_elapsed_nano_second" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_millis_second" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_nano_second" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ProceduralStopWatchTest.should_return_elapsed_nano_second" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_millis_second" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_nano_second" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.cleancode [clean build]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.cleancode [clean]" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_nano_second" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_millis_second" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ProceduralStopWatchTest.should_return_elapsed_nano_second" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ProceduralStopWatchTest.should_return_elapsed_millis_second" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.cleancode [clean]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.cleancode [clean]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.cleancode [clean build]" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_nano_second" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.StopWatchTest.should_return_elapsed_millis_second" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ProceduralStopWatchTest.should_return_elapsed_nano_second" />
       </list>
     </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1519658987079" />
+    <option name="lastUpdateTimestamp" value="1519659093110" />
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
@@ -722,7 +715,7 @@
       <workItem from="1519540713569" duration="5720000" />
       <workItem from="1519547220726" duration="1382000" />
       <workItem from="1519575141756" duration="149000" />
-      <workItem from="1519658951842" duration="36000" />
+      <workItem from="1519658951842" duration="146000" />
     </task>
     <servers />
   </component>
@@ -744,10 +737,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7359000" />
+    <option name="totallyTimeSpent" value="7469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -768,11 +762,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18630952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18630952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1035,8 +1029,8 @@
   </component>
   <component name="gradleExecuteTaskHistory">
     <option value="$PROJECT_DIR$" />
-    <option value="clean build" />
     <option value="clean" />
+    <option value="clean build" />
   </component>
   <component name="masterDetails">
     <states>
