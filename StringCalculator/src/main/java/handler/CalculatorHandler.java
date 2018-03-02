@@ -4,6 +4,8 @@ import common.Utils;
 import dto.CalculatorDto;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.lang.Double.parseDouble;
 
@@ -36,5 +38,16 @@ public class CalculatorHandler{
                         ,parseDouble(splitGetValueList.get(i+1)));
         }
         return result;
+    }
+
+    public static String [] fromRegexGetSplitValue(String inputValue){
+        Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(inputValue);
+
+        if(matcher.find()){
+            String customDelimeter = matcher.group(1);
+            return matcher.group(2).split(customDelimeter);
+        }
+
+        return inputValue.split(",|;");
     }
 }
