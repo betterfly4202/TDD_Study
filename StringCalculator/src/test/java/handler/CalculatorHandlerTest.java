@@ -27,4 +27,9 @@ public class CalculatorHandlerTest {
     public void 최종_계산기(){
         Assertions.assertThat(handler.resultCalculator("2 + 4 * 4 - 12")).isEqualTo(12.0);
     }
+
+    @Test
+    public void 확좡된_계산기(){
+        Assertions.assertThat(handler.resultCalculator("1 ; 2 ; 5 - 4")).isEqualTo(4.0);
+    }
 }
