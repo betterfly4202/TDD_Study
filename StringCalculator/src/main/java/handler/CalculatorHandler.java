@@ -40,14 +40,5 @@ public class CalculatorHandler{
         return result;
     }
 
-    public static String [] fromRegexGetSplitValue(String inputValue){
-        Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(inputValue);
 
-        if(matcher.find()){
-            String customDelimeter = matcher.group(1);
-            return matcher.group(2).split(customDelimeter);
-        }
-
-        return inputValue.split(",|;");
-    }
 }
