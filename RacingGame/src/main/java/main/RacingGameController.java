@@ -6,6 +6,7 @@ package main;
  */
 
 public class RacingGameController {
+    public void carInfo(){
 
-
+    }
 }
