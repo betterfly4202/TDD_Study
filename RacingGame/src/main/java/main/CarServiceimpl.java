@@ -1,8 +1,6 @@
 package main;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by betterFLY on 2018. 3. 6.
@@ -46,14 +44,16 @@ public class CarServiceimpl implements CarService{
         return recursiveCar(cars-1);
     }
 
-    static Map<Integer, MOVING_TYPE> map = new HashMap();
+    static HashMap<Integer, MOVING_TYPE> map = new HashMap();
+    static List<HashMap<Integer, MOVING_TYPE>> carInfoList = new ArrayList<>();
+
 
     @Override
     public int recursiveTimes(int times){
         if(times < 1)
             return times;
 
-        CarServiceimpl carServiceimpl = new CarServiceimpl();
+
         /**
            1.
                 map으로 받는걸 CarInfo 객체로 맵핑하고
@@ -71,16 +71,28 @@ public class CarServiceimpl implements CarService{
                 맵핑하기
          */
         //map.put(times, carServiceimpl.checkMovingState(carServiceimpl.extractMoveNumber(0,9)));
-        map.put(times, checkMovingState(extractMoveNumber(0,9)));
+
+        for(int i=0; i<2; i++) {
+            map.put(times, checkMovingState(extractMoveNumber(0,9)));
+            carInfoList.add(map);
+        }
+
 
         return recursiveTimes(times-1);
     }
 
-    public static void main(String [] args){
+    public static void main(String [] args) {
+
+
         CarServiceimpl impl = new CarServiceimpl();
         impl.recursiveTimes(5);
 
-        System.out.println(map);
-        System.out.println(map.get(1));
+        System.out.println(carInfoList);
+
+//        CarInfo carInfo = new CarInfo(3, 5);
+//        carInfo.carList.add(map);
+
+//        System.out.println(map);
+//        System.out.println(map.get(1));
     }
 }

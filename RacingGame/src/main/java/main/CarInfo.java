@@ -13,24 +13,11 @@ import java.util.Map;
 public class CarInfo {
     int cars;
     int times;
-    boolean move;
+    List<HashMap<Integer, CarServiceimpl.MOVING_TYPE>> carList;
 
-    public CarInfo(int times, boolean move){
+    public CarInfo(int cars, int times){
+        this.cars = cars;
         this.times = times;
-        this.move = move;
     }
 
-    public CarInfo() {
-
-    }
-
-
-
-    public static void main(String [] args){
-        HashMap map = new HashMap<>();
-        List<HashMap> carList = new ArrayList<>();
-        CarInfo carInfo = new CarInfo();
-
-        map.put(carInfo.times,carInfo.move);
-    }
 }
