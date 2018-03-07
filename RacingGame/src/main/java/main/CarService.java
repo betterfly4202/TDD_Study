@@ -7,5 +7,8 @@ package main;
 
 public interface CarService {
     int extractMoveNumber(int min, int max);
-    boolean checkMovingState(int num);
+    CarServiceimpl.MOVING_TYPE checkMovingState(int num);
+
+    int recursiveCar(int cars);
+    int recursiveTimes(int times);
 }
