@@ -1,17 +1,18 @@
-package main;
+package service;
+
+/**
+ * Created by betterFLY on 2018. 3. 9.
+ * Github : http://github.com/betterfly88
+ */
+
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Random;
-
-/**
- * Created by betterFLY on 2018. 3. 6.
- * Github : http://github.com/betterfly88
- */
+import java.util.Collections;
 
 public class CarServiceImplTest {
+
 
     CarServiceimpl carServiceimpl;
 
@@ -24,5 +25,10 @@ public class CarServiceImplTest {
     @Test
     public void 랜덤값_4이상_true_리턴() {
         Assert.assertEquals(true, carServiceimpl.checkMovingState(5));
+    }
+
+    @Test
+    public void 차량별_이동정보(){
+        carServiceimpl.outputList(3, 5, Collections.emptyList());
     }
 }
