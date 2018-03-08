@@ -20,6 +20,7 @@ public class CarServiceimpl implements CarService{
             return type;
         }
     }
+    static List<HashMap<Integer, MOVING_TYPE>> carInfoList = new ArrayList<>();
 
     @Override
     public int extractMoveNumber(int min, int max) {
@@ -36,56 +37,41 @@ public class CarServiceimpl implements CarService{
     }
 
     @Override
-    public int recursiveCar(int cars){
-        System.out.println(cars);
+    public int recursiveCar(int cars, int times){
         if(cars < 1)
             return cars;
-
-        return recursiveCar(cars-1);
+        HashMap<Integer, MOVING_TYPE> map = new HashMap();
+        recursiveTimes(times, map);
+        carInfoList.add(map);
+        return recursiveCar(cars-1, times);
     }
 
-    static HashMap<Integer, MOVING_TYPE> map = new HashMap();
-    static List<HashMap<Integer, MOVING_TYPE>> carInfoList = new ArrayList<>();
-
-
     @Override
-    public int recursiveTimes(int times){
+    public int recursiveTimes(int times, HashMap<Integer, MOVING_TYPE> map){
         if(times < 1)
             return times;
 
-
-        /**
-           1.
-                map으로 받는걸 CarInfo 객체로 맵핑하고
-                Car 라는 리스트에다가 <CarInfo> 이런식으로 넣으면
-                자동차 3개, 시도 5번 인 경우
-                0 -> map<CarInfo>
-                1 -> map<CarInfo>
-                2 -> map<CarInfo>
-                이런식으로 출력하면됨
-
-            2.
-                enum활용
-                true -> "-"
-                false -> ""
-                맵핑하기
-         */
-        //map.put(times, carServiceimpl.checkMovingState(carServiceimpl.extractMoveNumber(0,9)));
-
-        for(int i=0; i<2; i++) {
-            map.put(times, checkMovingState(extractMoveNumber(0,9)));
-            carInfoList.add(map);
-        }
-
-
-        return recursiveTimes(times-1);
+        map.put(times, checkMovingState(extractMoveNumber(0,9)));
+        return recursiveTimes(times-1, map);
     }
 
+
+
     public static void main(String [] args) {
-
-
         CarServiceimpl impl = new CarServiceimpl();
-        impl.recursiveTimes(5);
+        impl.recursiveCar(3,5);
+
+//        List<HashMap<Integer, MOVING_TYPE>> list = new ArrayList<>();
+//        for(int i=0; i<3; i++){
+//            HashMap<Integer, MOVING_TYPE> maps = new HashMap();
+//            for(int j=0; j<5; j++){
+//                maps.put(j, impl.checkMovingState(impl.extractMoveNumber(0,9)));
+//
+//            }
+//            list.add(maps);
+//        }
+//
+//        System.out.println(list);
 
         System.out.println(carInfoList);
 
@@ -96,3 +82,21 @@ public class CarServiceimpl implements CarService{
 //        System.out.println(map.get(1));
     }
 }
+
+
+/**
+ 1.
+ map으로 받는걸 CarInfo 객체로 맵핑하고
+ Car 라는 리스트에다가 <CarInfo> 이런식으로 넣으면
+ 자동차 3개, 시도 5번 인 경우
+ 0 -> map<CarInfo>
+ 1 -> map<CarInfo>
+ 2 -> map<CarInfo>
+ 이런식으로 출력하면됨
+
+ 2.
+ enum활용
+ true -> "-"
+ false -> ""
+ 맵핑하기
+ */
