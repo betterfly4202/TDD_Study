@@ -8,8 +8,8 @@ import java.util.Random;
  */
 
 public class Utils {
-    public static int extractMoveNumber(int min, int max){
+    public static int extractMoveNumber(){
         Random rand = new Random();
-        return rand.nextInt(max - min + 1) + min;
+        return rand.nextInt(10);
     }
 }

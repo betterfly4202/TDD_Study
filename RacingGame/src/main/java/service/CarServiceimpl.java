@@ -23,6 +23,10 @@ public class CarServiceimpl implements CarService{
         return MOVING_TYPE.STOP;
     }
 
+    public int invokeMoveCount(String type) {
+        MOVING_TYPE movingType = MOVING_TYPE.movingCheck(type);
+        return movingType.additionalMoveCount();
+    }
 
     /*
         차량 토탈 이동 정보
@@ -45,7 +49,7 @@ public class CarServiceimpl implements CarService{
         if(times < 1)
             return times;
 
-        map.put(times, checkMovingState(Utils.extractMoveNumber(0, 9)));
+        map.put(times, checkMovingState(Utils.extractMoveNumber()));
         return recursiveTimes(times-1, map);
     }
 

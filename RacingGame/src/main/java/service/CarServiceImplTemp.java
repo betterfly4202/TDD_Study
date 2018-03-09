@@ -16,7 +16,8 @@ public class CarServiceImplTemp implements CarService{
     List<HashMap<Integer, MOVING_TYPE>> carList = new ArrayList<>();
 
     List <ArrayList<String>> carMoveList = new ArrayList<>();
-    int moveCnt = 0;
+    private int moveCnt = 0;
+
     @Override
     public MOVING_TYPE checkMovingState(int num) {
         if(num > 4) {
@@ -57,7 +58,7 @@ public class CarServiceImplTemp implements CarService{
         if(times < 1)
             return times;
 
-        map.put(times, checkMovingState(Utils.extractMoveNumber(0, 9)));
+        map.put(times, checkMovingState(Utils.extractMoveNumber()));
         return recursiveTimes(times-1, map);
     }
 
@@ -71,7 +72,7 @@ public class CarServiceImplTemp implements CarService{
 
 //        String temp = checkPreviousMovingState(moveStateList, checkMovingStateString(Utils.extractMoveNumber(0, 9)));
 
-        String temp = additionalMovingState(moveCnt, checkMovingStateString(Utils.extractMoveNumber(0,9)));
+        String temp = additionalMovingState(moveCnt, checkMovingStateString(Utils.extractMoveNumber()));
         moveStateList.add(temp);
 
         return recursiveTimesWithList(times-1, moveStateList);
