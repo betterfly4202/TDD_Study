@@ -2,6 +2,7 @@ package service;
 
 import dto.MOVING_TYPE;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,5 +16,7 @@ public interface CarService {
 
     int recursiveCar(int cars, int times);
     int recursiveTimes(int times, HashMap<Integer, MOVING_TYPE> map);
+
+    int recursiveTimesWithList(int times, ArrayList<String> moveStateList);
 
 }

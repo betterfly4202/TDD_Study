@@ -13,6 +13,8 @@ import java.util.*;
 public class CarServiceimpl implements CarService{
     List<HashMap<Integer, MOVING_TYPE>> carList = new ArrayList<>();
 
+    List <ArrayList<MOVING_TYPE>> carMoveList = new ArrayList<>();
+
     @Override
     public MOVING_TYPE checkMovingState(int num) {
         if(num > 4)
@@ -21,6 +23,10 @@ public class CarServiceimpl implements CarService{
         return MOVING_TYPE.STOP;
     }
 
+
+    /*
+        차량 토탈 이동 정보
+     */
     @Override
     public int recursiveCar(int cars, int times){
         if(cars < 1)
@@ -29,6 +35,7 @@ public class CarServiceimpl implements CarService{
         HashMap<Integer, MOVING_TYPE> map = new HashMap();
         recursiveTimes(times, map);
         carList.add(map);
+
 
         return recursiveCar(cars-1, times);
     }
@@ -42,15 +49,44 @@ public class CarServiceimpl implements CarService{
         return recursiveTimes(times-1, map);
     }
 
+    /*
+        차량별 이동 정보
+     */
+    @Override
+    public int recursiveTimesWithList(int times, ArrayList<String> moveStateList) {
+        if(times < 1)
+            return times;
+
+//        moveStateList.add(checkMovingState(Utils.extractMoveNumber(0, 9)));
+//        moveStateList.add(checkPreviousMovingState(checkMovingState(Utils.extractMoveNumber(0, 9))));
+        return recursiveTimesWithList(times-1, moveStateList);
+    }
+
+    public String checkPreviousMovingState(ArrayList<MOVING_TYPE> moveStateList){
+        if(moveStateList.size()-1 < 1)
+            return "";
+
+        if(moveStateList.get(moveStateList.size()-1).equals(MOVING_TYPE.MOVE)){
+            return moveStateList.get(moveStateList.size()-1).getType()+MOVING_TYPE.MOVE.getType();
+        }
+
+        return moveStateList.get(moveStateList.size()-1).getType();
+    }
+
     public void outputList(int cars, int times){
         recursiveCar(cars, times);
         System.out.println(carList);
-        for(int i=1; i<=times; i++){
+        for(int i=0; i<=times; i++){
             for(int j=0; j<cars; j++){
                 System.out.println(carList.get(j).get(i));
             }
             System.out.println();
         }
+    }
+
+    public static void main (String [] args){
+        CarServiceimpl inmpl = new CarServiceimpl();
+        inmpl.recursiveCar(3,5);
     }
 }
 
