@@ -16,15 +16,14 @@ public class CarInfo extends CarServiceimpl {
     int times;
     List<HashMap<Integer, MOVING_TYPE>> carList;
 
+    public CarInfo(){
+
+    }
+
     public CarInfo(int cars, int times){
         this.cars = cars;
         this.times = times;
         this.carList = carList;
-    }
-
-    @Override
-    public int recursiveCar(int cars, int times, List<HashMap<Integer, MOVING_TYPE>> carList) {
-        return super.recursiveCar(this.cars, this.times, this.carList);
     }
 }
 

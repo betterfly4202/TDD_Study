@@ -11,6 +11,8 @@ import java.util.*;
  */
 
 public class CarServiceimpl implements CarService{
+    List<HashMap<Integer, MOVING_TYPE>> carList = new ArrayList<>();
+
     @Override
     public MOVING_TYPE checkMovingState(int num) {
         if(num > 4)
@@ -20,16 +22,15 @@ public class CarServiceimpl implements CarService{
     }
 
     @Override
-    public int recursiveCar(int cars, int times, List<HashMap<Integer, MOVING_TYPE>> carList){
+    public int recursiveCar(int cars, int times){
         if(cars < 1)
             return cars;
-        HashMap<Integer, MOVING_TYPE> map = new HashMap();
 
+        HashMap<Integer, MOVING_TYPE> map = new HashMap();
         recursiveTimes(times, map);
-//        carList.add(map);
         carList.add(map);
 
-        return recursiveCar(cars-1, times, carList);
+        return recursiveCar(cars-1, times);
     }
 
     @Override
@@ -41,8 +42,15 @@ public class CarServiceimpl implements CarService{
         return recursiveTimes(times-1, map);
     }
 
-    public void outputList(int cars, int times,  List<HashMap<Integer, MOVING_TYPE>> carList){
-        recursiveCar(cars,times, carList);
+    public void outputList(int cars, int times){
+        recursiveCar(cars, times);
+        System.out.println(carList);
+        for(int i=1; i<=times; i++){
+            for(int j=0; j<cars; j++){
+                System.out.println(carList.get(j).get(i));
+            }
+            System.out.println();
+        }
     }
 }
 

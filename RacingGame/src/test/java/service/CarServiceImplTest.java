@@ -9,7 +9,6 @@ package service;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import java.util.Collections;
 
 public class CarServiceImplTest {
 
@@ -29,6 +28,8 @@ public class CarServiceImplTest {
 
     @Test
     public void 차량별_이동정보(){
-        carServiceimpl.outputList(3, 5, Collections.emptyList());
+
+        carServiceimpl.outputList(3, 5);
+
     }
 }

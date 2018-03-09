@@ -13,7 +13,7 @@ import java.util.List;
 public interface CarService {
     MOVING_TYPE checkMovingState(int num);
 
-    int recursiveCar(int cars, int times, List<HashMap<Integer, MOVING_TYPE>> carList);
+    int recursiveCar(int cars, int times);
     int recursiveTimes(int times, HashMap<Integer, MOVING_TYPE> map);
 
 }
