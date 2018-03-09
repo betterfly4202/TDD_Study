@@ -8,22 +8,11 @@ import java.util.Map;
  * Github : http://github.com/betterfly88
  */
 
-public enum MOVING_TYPE implements MOVING_TYPE_SERVICE{
-    MOVE("-"){
-        @Override
-        public int additionalMoveCount(){
-            return this.moveCnt++;
-        }
-    },
-    STOP(""){
-        @Override
-        public int additionalMoveCount(){
-            return 0;
-        }
-    };
+public enum MOVING_TYPE{
+    MOVE("-"),
+    STOP("");
 
     final private String type;
-    private int moveCnt = 0;
 
     private MOVING_TYPE(String type) {
         this.type = type;

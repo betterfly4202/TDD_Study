@@ -23,9 +23,19 @@ public class CarServiceimpl implements CarService{
         return MOVING_TYPE.STOP;
     }
 
-    public int invokeMoveCount(String type) {
-        MOVING_TYPE movingType = MOVING_TYPE.movingCheck(type);
-        return movingType.additionalMoveCount();
+
+
+    static int moveCnt = 0;
+
+    public int checkMoveCount(int randNum){
+        if(randNum > 4 )
+            return moveCnt++;
+
+        return moveCnt;
+    }
+
+    public boolean invokeMoveCount(String type) {
+        return type.equals(MOVING_TYPE.MOVE);
     }
 
     /*

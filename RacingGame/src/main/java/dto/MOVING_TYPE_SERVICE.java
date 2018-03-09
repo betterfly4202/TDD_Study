@@ -6,5 +6,5 @@ package dto;
  */
 
 public interface MOVING_TYPE_SERVICE {
-    int additionalMoveCount();
+    int additionalMoveCount(int moveCnt);
 }
