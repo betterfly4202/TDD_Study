@@ -25,4 +25,5 @@ public class cntTest {
     public void 차량별_이동정보(){
         cnt.test(3 ,5);
     }
+
 }
