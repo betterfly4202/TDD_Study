@@ -19,7 +19,7 @@ public class RacingGameImpl extends RacingGame {
 
     private List <String> moveStateList;
 
-    protected RacingGameImpl(int cars, int times, Map<Integer, List<String>> racingCarList,  RacingAPI racingAPI) {
+    protected RacingGameImpl(int cars, int times, Map<Integer, List<String>> racingCarList, RacingAPI racingAPI) {
         super(racingAPI);
         this.cars = cars;
         this.times = times;
@@ -43,24 +43,31 @@ public class RacingGameImpl extends RacingGame {
     }
 
     @Override
-    public int stackUpMoveList(int times, List<String> moveStateList) {
+    public int stackUpMoveList(List<String> moveStateList) {
         if(times < 1)
             return times;
 
         moveStateList.add(additionalMovementToString(checkMovingCount(Utils.extractMoveNumber())));
 
-        return stackUpMoveList(times-1, moveStateList);
+        times -= 1;
+        return stackUpMoveList(moveStateList);
     }
 
     @Override
-    public int recursiveRacingGame(int cars, int times) {
+    public int recursiveRacingGame() {
         if(cars < 1)
             return cars;
 
         moveStateList  = new ArrayList<>();
-        stackUpMoveList(times, moveStateList);
+        stackUpMoveList(moveStateList);
+        cars -= 1;
         racingCarList.put(cars, moveStateList);
 
-        return recursiveRacingGame(cars-1, times);
+        return recursiveRacingGame();
+    }
+
+    public void start(){
+        recursiveRacingGame();
+        System.out.println(racingCarList);
     }
 }
