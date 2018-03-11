@@ -19,11 +19,10 @@ public class RacingGameImpl extends RacingGame {
 
     private List <String> moveStateList;
 
-    protected RacingGameImpl(int cars, int times, Map<Integer, List<String>> racingCarList, RacingAPI racingAPI) {
+    protected RacingGameImpl(int cars, int times, RacingAPI racingAPI) {
         super(racingAPI);
         this.cars = cars;
         this.times = times;
-        this.racingCarList = racingCarList;
     }
 
     @Override
