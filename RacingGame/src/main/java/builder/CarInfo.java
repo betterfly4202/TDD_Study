@@ -1,4 +1,4 @@
-package main;
+package builder;
 
 import dto.MOVING_TYPE;
 import service.CarServiceimpl;
@@ -12,21 +12,29 @@ import java.util.List;
  */
 
 public class CarInfo extends CarServiceimpl {
-    int cars;
-    int times;
+    Integer cars;
+    Integer times;
     List<HashMap<Integer, MOVING_TYPE>> carList;
 
-    public CarInfo(){
-
-    }
-
-    public CarInfo(int cars, int times){
+    public CarInfo(Integer cars, Integer times){
         this.cars = cars;
         this.times = times;
         this.carList = carList;
     }
-}
 
+    public Integer getCars(){
+        return cars;
+    }
+
+    public Integer getTimes(){
+        return times;
+    }
+
+    public String getCarInfo(){
+        String carInfo = String.format("cars:%s, times:%d,",cars, times);
+        return carInfo;
+    }
+}
 
 /**
  *

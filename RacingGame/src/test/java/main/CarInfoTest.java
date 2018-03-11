@@ -6,14 +6,12 @@ package main;
  */
 
 
+import builder.CarInfo;
 import dto.MOVING_TYPE;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import service.CarServiceimpl;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
