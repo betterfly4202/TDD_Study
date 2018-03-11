@@ -1,7 +1,5 @@
 package service;
 
-import builder.CarInfo;
-import builder.CarInfoBuilder;
 import common.Utils;
 import dto.MOVING_TYPE;
 
@@ -26,6 +24,13 @@ public class CarServiceImplCnt{
         return MOVING_TYPE.STOP;
     }
 
+    public String additionalMovement(MOVING_TYPE type){
+        if(moveStateList.size() < 1){
+            return type.getType();
+        }
+        return moveStateList.get(moveStateList.size()-1)+type.getType();
+    }
+
     public int recursiveTimes(int times, List <String> moveStateList){
         if(times < 1)
             return times;
@@ -35,12 +40,6 @@ public class CarServiceImplCnt{
         return recursiveTimes(times-1, moveStateList);
     }
 
-    public String additionalMovement(MOVING_TYPE type){
-        if(moveStateList.size() < 1){
-            return type.getType();
-        }
-        return moveStateList.get(moveStateList.size()-1)+type.getType();
-    }
 
     public int recursiveRacingGame(int cars, int times){
         if(cars < 1)
@@ -59,10 +58,4 @@ public class CarServiceImplCnt{
     }
 
 
-    public static void main(String [] args){
-        CarInfoBuilder builder = new CarInfoBuilder();
-        CarInfo carInfo = builder.setCars(10).setTimes(5).build();
-
-        System.out.println(carInfo.getCarInfo());
-    }
 }

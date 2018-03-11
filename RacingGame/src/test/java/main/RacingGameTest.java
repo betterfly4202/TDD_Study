@@ -6,7 +6,7 @@ package main;
  */
 
 
-import builder.CarInfo;
+import builder.RacingGame;
 import dto.MOVING_TYPE;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,21 +16,21 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class CarInfoTest {
+public class RacingGameTest {
 
-    CarInfo carInfo;
+    RacingGame racingGame;
     @Before
     public void setUp(){
         System.out.println("setUp");
-        carInfo = new CarInfo();
+//        racingGame = new RacingGame();
     }
 
     @Test
     public void CarInfo_통한_생성() {
 //        Assert.assertEquals(true, carServiceimpl.checkMovingState(5));
         List<HashMap<Integer, MOVING_TYPE>> carList = new ArrayList<>();
-        carInfo.recursiveCar(3,5);
-        System.out.println(carList);
+//        racingGame.recursiveCar(3,5);
+//        System.out.println(carList);
     }
 
 
