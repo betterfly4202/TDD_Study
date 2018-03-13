@@ -9,15 +9,12 @@ package bridge;
 
 import org.junit.Before;
 import org.junit.Test;
-import service.CarServiceImplCnt;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class BridgeTest {
     RacingGameImpl racingGame;
-    private Object Map;
 
     @Before
     public void setUp(){
