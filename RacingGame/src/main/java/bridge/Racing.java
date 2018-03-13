@@ -9,9 +9,10 @@ import java.util.Map;
  */
 
 public class Racing implements RacingAPI {
+    private Map<Integer, List<String>> racingCarList;
 
     @Override
-    public void start(int cars, int times, Map<Integer, List<String>> racingCarList) {
+    public void start(int cars, int times) {
         System.out.println(racingCarList);
     }
 }

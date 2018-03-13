@@ -17,6 +17,8 @@ abstract class RacingGame {
         this.racingAPI = racingAPI;
     }
 
+    public abstract void start();
+
     public abstract MOVING_TYPE checkMovingCount(int num);
 
     public abstract String additionalMovementToString(MOVING_TYPE type);
