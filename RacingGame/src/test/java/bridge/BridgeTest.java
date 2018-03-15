@@ -19,8 +19,8 @@ public class BridgeTest {
     @Before
     public void setUp(){
         System.out.println("setUp");
-//        racingGame = new RacingGameImpl(3,5, (cars, times) -> racingGame.start());
-        racingGame = new RacingGameImpl(3,5);
+        racingGame = new RacingGameImpl(3,5, (cars, times) -> racingGame.start());
+//        racingGame = new RacingGameImpl(3,5);
     }
 
     @Test

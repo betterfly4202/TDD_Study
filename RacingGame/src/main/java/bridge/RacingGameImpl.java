@@ -42,32 +42,32 @@ public class RacingGameImpl extends RacingGame {
     }
 
     @Override
-    public int stackUpMoveList(List<String> moveStateList) {
+    public int stackUpMoveList(int times, List<String> moveStateList) {
         if(times < 1)
             return times;
 
         moveStateList.add(additionalMovementToString(checkMovingCount(Utils.extractMoveNumber())));
 
-        times -= 1;
-        return stackUpMoveList(moveStateList);
+        return stackUpMoveList(times-1, moveStateList);
     }
 
     @Override
-    public int recursiveRacingGame() {
+    public int recursiveRacingGame(int cars) {
         if(cars < 1)
             return cars;
 
         moveStateList  = new ArrayList<>();
-        stackUpMoveList(moveStateList);
-        cars -= 1;
-        racingCarList.put(cars, moveStateList);
+        stackUpMoveList(this.times, moveStateList);
 
-        return recursiveRacingGame();
+        racingCarList.put(cars, moveStateList);
+        System.out.println(cars+" 라운드 : "+moveStateList.get(cars));
+
+        return recursiveRacingGame(cars-1);
     }
 
     @Override
     public void start(){
-        recursiveRacingGame();
+        recursiveRacingGame(this.cars);
         System.out.println(racingCarList);
     }
 }

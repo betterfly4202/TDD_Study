@@ -23,7 +23,7 @@ abstract class RacingGame {
 
     public abstract String additionalMovementToString(MOVING_TYPE type);
 
-    public abstract int stackUpMoveList(List<String> moveStateList);
+    public abstract int stackUpMoveList(int times, List<String> moveStateList);
 
-    public abstract int recursiveRacingGame();
+    public abstract int recursiveRacingGame(int cars);
 }
