@@ -60,8 +60,6 @@ public class RacingGameImpl extends RacingGame {
         stackUpMoveList(this.times, moveStateList);
 
         racingCarList.put(cars, moveStateList);
-        System.out.println(cars+" 라운드 : "+moveStateList.get(cars));
-
         return recursiveRacingGame(cars-1);
     }
 
@@ -69,5 +67,12 @@ public class RacingGameImpl extends RacingGame {
     public void start(){
         recursiveRacingGame(this.cars);
         System.out.println(racingCarList);
+        for(int i=0; i<this.times; i++){
+            for(int j=1; j<=this.cars; j++){
+                System.out.println(i+1+" ROUND : "+racingCarList.get(j).get(i));
+
+            }
+            System.out.println();
+        }
     }
 }
