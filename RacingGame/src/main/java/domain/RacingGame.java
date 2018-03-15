@@ -1,8 +1,7 @@
-package bridge;
+package domain;
 
 import dto.MOVING_TYPE;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**

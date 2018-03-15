@@ -1,4 +1,4 @@
-package bridge;
+package domain;
 
 import common.Utils;
 import dto.MOVING_TYPE;

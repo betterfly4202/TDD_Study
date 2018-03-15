@@ -1,4 +1,4 @@
-package bridge;
+package domain;
 
 /**
  * Created by betterFLY on 2018. 3. 12.
@@ -10,19 +10,22 @@ package bridge;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.List;
-
 public class BridgeTest {
     RacingGameImpl racingGame;
+    Racing racing;
 
     @Before
     public void setUp(){
         System.out.println("setUp");
+        racing = new Racing();
         racingGame = new RacingGameImpl(3,5, (cars, times) -> racingGame.start());
 //        racingGame = new RacingGameImpl(3,5);
     }
 
+    @Test
+    public void racing_game(){
+        racing.start(3,5);
+    }
     @Test
     public void 차량별_이동정보(){
         racingGame.start();
