@@ -19,12 +19,13 @@ public class BridgeTest {
     @Before
     public void setUp(){
         System.out.println("setUp");
+//        racingGame = new RacingGameImpl(3,5, (cars, times) -> racingGame.start());
+        racingGame = new RacingGameImpl(3,5);
     }
 
     @Test
     public void 차량별_이동정보(){
-        java.util.Map<Integer, List<String>> racingCarList = new HashMap<>();
-//        RacingGame race = new RacingGameImpl(3, 5,racingCarList, new RacingAPI());
+        racingGame.start();
 /**
  * 하고 싶은 작업..
  *
