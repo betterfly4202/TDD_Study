@@ -8,14 +8,7 @@ import org.junit.Test;
  * Github : http://github.com/betterfly88
  */
 
-import fitnesse.wiki.*;
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-
-public class PrintMorseCodeTest {
+public class ExcuteMorseCodeTest {
     PrintMorseCode morseCode;
     @Before
     public void setUp() throws Exception {
