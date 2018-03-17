@@ -23,7 +23,6 @@ public class MorseCode {
 
     public void dash(){
         function.dash();
-
     }
 
     public void sapce(){
