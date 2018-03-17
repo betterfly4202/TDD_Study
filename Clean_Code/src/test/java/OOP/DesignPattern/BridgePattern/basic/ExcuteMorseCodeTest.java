@@ -1,4 +1,4 @@
-package OOP.BridgePattern.basic;
+package OOP.DesignPattern.BridgePattern.basic;
 
 import org.junit.Before;
 import org.junit.Test;

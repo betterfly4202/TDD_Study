@@ -1,4 +1,4 @@
-package OOP.BridgePattern.basic;
+package OOP.DesignPattern.BridgePattern.basic;
 
 /**
  * Created by betterFLY on 2018. 3. 17.
