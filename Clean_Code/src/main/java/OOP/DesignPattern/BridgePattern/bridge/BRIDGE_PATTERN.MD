@@ -17,9 +17,7 @@ public interface MorseCodeFunction {
 
 }
 ```
-2. 기능을 재정의하는 클래스를 구현한다
-
-(Refined Abstraction)
+2. 기능을 재정의하는 클래스를 구현한다(Refined Abstraction)
 ```java
 
 public class MorseCode {
@@ -50,7 +48,8 @@ public class MorseCode {
 
 ```
 
-3. 기능을 실제로 구현하는(작동하는) 클래스 구현한다 => 이부분이 핵심. 
+3. 기능을 실제로 구현하는(작동하는) 클래스 구현한다  
+=> 이부분이 핵심. 
 필요에 따라 구현을 개조하여 실행 클래스에서 유연하게 조립하여 사용할 수 있다 
 (Implementor)
 ```java
