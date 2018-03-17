@@ -5,7 +5,7 @@ package OOP.DesignPattern.TemplateMethodPattern.templatemethod;
  * Github : http://github.com/betterfly88
  */
 
-public class DefaultGameonnectHelper extends AbstGameConnectHelper {
+public class DefaultGameConnectHelper extends AbstGameConnectHelper {
 
     /*
         만약 기능이 추가된다면?

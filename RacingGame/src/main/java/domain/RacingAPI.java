@@ -7,5 +7,5 @@ package domain;
 
 public interface RacingAPI {
 
-    public void start(int cars, int times);
+    void gameStart();
 }

@@ -137,7 +137,7 @@ public class DefaultGameonnectHelper extends AbstGameConnectHelper {
 ```java
 
 import OOP.DesignPattern.TemplateMethodPattern.templatemethod.AbstGameConnectHelper;
-import OOP.DesignPattern.TemplateMethodPattern.templatemethod.DefaultGameonnectHelper;
+import OOP.DesignPattern.TemplateMethodPattern.templatemethod.DefaultGameConnectHelper;
 import org.junit.Before;
 import org.junit.Test;
 

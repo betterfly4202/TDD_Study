@@ -3,10 +3,7 @@ package domain;
 import common.Utils;
 import dto.MOVING_TYPE;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by betterFLY on 2018. 3. 12.
@@ -15,14 +12,18 @@ import java.util.Map;
 
 public class RacingGameImpl extends RacingGame {
     private int cars, times;
-    private Map<Integer, List<String>> racingCarList = new HashMap<>();
 
+    private Map<Integer, List<String>> racingCarList = new HashMap<>();
     private List <String> moveStateList;
 
-    protected RacingGameImpl(int cars, int times, RacingAPI racingAPI) {
-        super(racingAPI);
+    protected RacingGameImpl(int cars, int times){
         this.cars = cars;
         this.times = times;
+    }
+
+    public void getMoveStateList(String movingState){
+        List <String> moveStateList = new LinkedList<>();
+        moveStateList.add(movingState);
     }
 
     @Override

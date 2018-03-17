@@ -12,20 +12,26 @@ import org.junit.Test;
 
 public class BridgeTest {
     RacingGameImpl racingGame;
-    Racing racing;
+    RacingGame racing;
 
     @Before
     public void setUp(){
         System.out.println("setUp");
-        racing = new Racing();
-        racingGame = new RacingGameImpl(3,5, (cars, times) -> racingGame.start());
-//        racingGame = new RacingGameImpl(3,5);
+
     }
 
+//    @Test
+//    public void racing_game(){
+//        racing.start(3,5);
+//    }
+
     @Test
-    public void racing_game(){
-        racing.start(3,5);
+    public void racing(){
+        racing = new RacingGameImpl(3, 5);
+        racing.start();
     }
+
+
     @Test
     public void 차량별_이동정보(){
         racingGame.start();

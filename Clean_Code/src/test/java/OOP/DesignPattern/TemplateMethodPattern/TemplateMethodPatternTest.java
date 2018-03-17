@@ -7,15 +7,14 @@ package OOP.DesignPattern.TemplateMethodPattern;
 
 
 import OOP.DesignPattern.TemplateMethodPattern.templatemethod.AbstGameConnectHelper;
-import OOP.DesignPattern.TemplateMethodPattern.templatemethod.DefaultGameonnectHelper;
-import org.junit.Before;
+import OOP.DesignPattern.TemplateMethodPattern.templatemethod.DefaultGameConnectHelper;
 import org.junit.Test;
 
 public class TemplateMethodPatternTest {
 
     @Test
     public void 템플릿메소드패턴_실행(){
-        AbstGameConnectHelper helper = new DefaultGameonnectHelper();
+        AbstGameConnectHelper helper = new DefaultGameConnectHelper();
         helper.requestConnection("아이디 인증 과정 시작");
     }
 }

@@ -12,17 +12,17 @@ import java.util.List;
 abstract class RacingGame {
     protected RacingAPI racingAPI;
 
-    protected RacingGame(RacingAPI racingAPI){
+    protected RacingGame(){
         this.racingAPI = racingAPI;
     }
 
-    public abstract void start();
+    protected abstract void start();
 
-    public abstract MOVING_TYPE checkMovingCount(int num);
+    protected abstract MOVING_TYPE checkMovingCount(int num);
 
-    public abstract String additionalMovementToString(MOVING_TYPE type);
+    protected abstract String additionalMovementToString(MOVING_TYPE type);
 
-    public abstract int stackUpMoveList(int times, List<String> moveStateList);
+    protected abstract int stackUpMoveList(int times, List<String> moveStateList);
 
-    public abstract int recursiveRacingGame(int cars);
+    protected abstract int recursiveRacingGame(int cars);
 }
