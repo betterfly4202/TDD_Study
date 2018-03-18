@@ -16,7 +16,7 @@ public class RacingGameImpl extends RacingGame {
     private Map<Integer, List<String>> racingCarList = new HashMap<>();
     private List <String> moveStateList;
 
-    protected RacingGameImpl(int cars, int times){
+    public RacingGameImpl(int cars, int times){
         this.cars = cars;
         this.times = times;
     }
