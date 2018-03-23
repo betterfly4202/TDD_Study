@@ -2,6 +2,7 @@ package domain;
 
 import common.Utils;
 import dto.MOVING_TYPE;
+import entity.CarMoveState;
 
 import java.util.*;
 import java.util.stream.IntStream;
@@ -55,6 +56,7 @@ public class RacingGameImpl extends RacingGame {
             .range(0,times)
             .forEach(i -> moveStateList.add(additionalMovementToString(getCarMovingStatement(Utils.extractMoveNumber()))));
 
+
         return moveStateList;
     }
 
@@ -73,6 +75,20 @@ public class RacingGameImpl extends RacingGame {
 
         racingCarList.put(cars, moveStateList);
         return recursiveRacingGame(cars-1);
+    }
+
+    public Map<Integer, List<String>> settingCarMoveState(){
+        IntStream.range(0,cars)
+                .forEach(i ->racingCarList.put(i,addToCarMoveList()));
+//        racingCarList.put(cars, addToCarMoveList());
+
+        return racingCarList;
+    }
+
+    public void printMap(){
+        IntStream.range(0, cars)
+                .mapToObj(i -> settingCarMoveState())
+                .forEach(System.out::println);
     }
 
     @Override

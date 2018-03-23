@@ -41,7 +41,7 @@ public class BridgeTest {
         racing = new RacingGameImpl(3, 5);
 //        racing.stream();
         racingGame = new RacingGameImpl(3, 5);
-        racingGame.printList();
+        racingGame.printMap();
     }
 }
 
