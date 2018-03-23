@@ -5,8 +5,6 @@ package domain;
  * Github : http://github.com/betterfly88
  */
 
-
-
 import org.junit.Before;
 import org.junit.Test;
 

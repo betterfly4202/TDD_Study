@@ -18,7 +18,7 @@ abstract class RacingGame {
 
     protected abstract void start();
 
-    protected abstract MOVING_TYPE checkMovingCount(int num);
+    protected abstract MOVING_TYPE getCarMovingStatement(int num);
 
     protected abstract String additionalMovementToString(MOVING_TYPE type);
 

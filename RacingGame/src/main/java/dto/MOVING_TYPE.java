@@ -20,17 +20,4 @@ public enum MOVING_TYPE{
     public String getType() {
         return type;
     }
-
-
-    private static Map<String, MOVING_TYPE> requestMapping;
-
-    static {
-        requestMapping = new HashMap<String, MOVING_TYPE>();
-        requestMapping.put(MOVE.getType(), MOVE);
-        requestMapping.put(STOP.getType(), STOP);
-    }
-
-    public static MOVING_TYPE movingCheck(String type) {
-        return requestMapping.get(type);
-    }
 }

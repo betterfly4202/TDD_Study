@@ -21,13 +21,8 @@ public class RacingGameImpl extends RacingGame {
         this.times = times;
     }
 
-    public void getMoveStateList(String movingState){
-        List <String> moveStateList = new LinkedList<>();
-        moveStateList.add(movingState);
-    }
-
     @Override
-    public MOVING_TYPE checkMovingCount(int randNum) {
+    public MOVING_TYPE getCarMovingStatement(int randNum) {
         if(randNum > 4 )
             return MOVING_TYPE.MOVE;
 
@@ -47,7 +42,7 @@ public class RacingGameImpl extends RacingGame {
         if(times < 1)
             return times;
 
-        moveStateList.add(additionalMovementToString(checkMovingCount(Utils.extractMoveNumber())));
+        moveStateList.add(additionalMovementToString(getCarMovingStatement(Utils.extractMoveNumber())));
 
         return stackUpMoveList(times-1, moveStateList);
     }
