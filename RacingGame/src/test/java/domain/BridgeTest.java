@@ -33,22 +33,15 @@ public class BridgeTest {
     @Test
     public void 차량별_이동정보(){
         racingGame.start();
-/**
- * 하고 싶은 작업..
- *
- * RacingGame 이라는 클래스를 생성하고
- * 인스턴스에 car 정보 times 정보만 넣은 담에
- * racingGame.start();
- * 날려주면 race 결과가 출력되어야 함..
- *
- * 생성자 파라미터로 Map을 받아야 할까
- * 받지 않아도 되나?
- *
- * start를 눌렀을떄 어떻게 하면 Map정보를 전부 출력할 수 있지?
- */
-
 
     }
 
+    @Test
+    public void 스트림출력하기(){
+        racing = new RacingGameImpl(3, 5);
+//        racing.stream();
+        racingGame = new RacingGameImpl(3, 5);
+        racingGame.printList();
+    }
 }
 

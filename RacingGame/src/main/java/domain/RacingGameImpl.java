@@ -4,6 +4,7 @@ import common.Utils;
 import dto.MOVING_TYPE;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 /**
  * Created by betterFLY on 2018. 3. 12.
@@ -31,9 +32,9 @@ public class RacingGameImpl extends RacingGame {
 
     @Override
     public String additionalMovementToString(MOVING_TYPE type) {
-        if(moveStateList.size() < 1){
+        if(moveStateList.size() < 1)
             return type.getType();
-        }
+
         return moveStateList.get(moveStateList.size()-1)+type.getType();
     }
 
@@ -42,9 +43,24 @@ public class RacingGameImpl extends RacingGame {
         if(times < 1)
             return times;
 
-        moveStateList.add(additionalMovementToString(getCarMovingStatement(Utils.extractMoveNumber())));
+        for(String moveState : moveStateList)
+            moveStateList.add(additionalMovementToString(getCarMovingStatement(Utils.extractMoveNumber())));
 
         return stackUpMoveList(times-1, moveStateList);
+    }
+
+    public List<String> addToCarMoveList(){
+        moveStateList = new ArrayList<>();
+        IntStream
+            .range(0,times)
+            .forEach(i -> moveStateList.add(additionalMovementToString(getCarMovingStatement(Utils.extractMoveNumber()))));
+
+        return moveStateList;
+    }
+
+    public void printList(){
+        for(String print : addToCarMoveList())
+            System.out.println(print);
     }
 
     @Override
@@ -67,6 +83,19 @@ public class RacingGameImpl extends RacingGame {
                 System.out.println(i+1+" ROUND : "+racingCarList.get(j).get(i));
             }
             System.out.println();
+        }
+    }
+
+    @Override
+    public void stream(){
+        recursiveRacingGame(this.cars);
+//        for(int j=1; j<=this.cars; j++){
+//            System.out.println(j+" ROUND : "+racingCarList.get(j));
+//        }
+        for(Map.Entry<Integer, List<String>> entry: racingCarList.entrySet()){
+
+            System.out.println(entry.getKey()+" - "+ entry.getValue());
+
         }
     }
 }

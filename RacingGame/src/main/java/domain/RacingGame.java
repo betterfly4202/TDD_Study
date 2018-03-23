@@ -10,12 +10,6 @@ import java.util.List;
  */
 
 abstract class RacingGame {
-    protected RacingAPI racingAPI;
-
-    protected RacingGame(){
-        this.racingAPI = racingAPI;
-    }
-
     protected abstract void start();
 
     protected abstract MOVING_TYPE getCarMovingStatement(int num);
@@ -25,4 +19,7 @@ abstract class RacingGame {
     protected abstract int stackUpMoveList(int times, List<String> moveStateList);
 
     protected abstract int recursiveRacingGame(int cars);
+
+    protected abstract void stream();
+
 }
