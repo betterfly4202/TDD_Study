@@ -5,7 +5,9 @@ import dto.MOVING_TYPE;
 import entity.CarMoveState;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by betterFLY on 2018. 3. 12.
@@ -89,6 +91,7 @@ public class RacingGameImpl extends RacingGame {
         IntStream.range(0, cars)
                 .mapToObj(i -> settingCarMoveState())
                 .forEach(System.out::println);
+
     }
 
     @Override
@@ -105,9 +108,6 @@ public class RacingGameImpl extends RacingGame {
     @Override
     public void stream(){
         recursiveRacingGame(this.cars);
-//        for(int j=1; j<=this.cars; j++){
-//            System.out.println(j+" ROUND : "+racingCarList.get(j));
-//        }
         for(Map.Entry<Integer, List<String>> entry: racingCarList.entrySet()){
 
             System.out.println(entry.getKey()+" - "+ entry.getValue());
