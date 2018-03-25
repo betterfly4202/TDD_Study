@@ -1,5 +1,8 @@
 package entity;
 
+import dto.MOVING_TYPE;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,34 +13,21 @@ import java.util.List;
 public class CarMoveState {
     // 이건 List
     private int times = 0;
-    private static String[] carMovement = new String[100];
 
-    private List<String> carMoveList;
+    private List<MOVING_TYPE> carMoveList;
 
-    CarMoveState(List<String> carMoveList){
-        this.carMoveList = carMoveList;
+
+    public CarMoveState(int times){
+        carMoveList = new ArrayList<>();
+
+//        IntStream
+//                .range(0,times)
+//                .forEach(i -> getMoveType());
+
     }
 
-    CarMoveState(int times){
-        this.times = times;
+    public List<MOVING_TYPE> getCarMoveList(){
+        return this.carMoveList;
     }
 
-    public boolean setMoveState(String movement){
-        carMovement[times] = movement;
-        times++;
-
-        return true;
-    }
-
-    public final static void main(String [] args){
-        CarMoveState s = new CarMoveState(5);
-        s.setMoveState("zz");
-        s.setMoveState("az");
-        s.setMoveState("ssz");
-        s.setMoveState("zDfsaz");
-        s.setMoveState("zadfss");
-
-        for(String temp:carMovement)
-            System.out.println(temp);
-    }
 }

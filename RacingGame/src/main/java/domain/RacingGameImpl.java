@@ -2,12 +2,8 @@ package domain;
 
 import common.Utils;
 import dto.MOVING_TYPE;
-import entity.CarMoveState;
-
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * Created by betterFLY on 2018. 3. 12.
@@ -16,9 +12,12 @@ import java.util.stream.Stream;
 
 public class RacingGameImpl extends RacingGame {
     private int cars, times;
+    private Utils utils;
 
     private Map<Integer, List<String>> racingCarList = new HashMap<>();
     private List <String> moveStateList;
+
+
 
     public RacingGameImpl(int cars, int times){
         this.cars = cars;
@@ -46,17 +45,22 @@ public class RacingGameImpl extends RacingGame {
         if(times < 1)
             return times;
 
+        int getMovingState = utils.extractMoveNumber();
+
         for(String moveState : moveStateList)
-            moveStateList.add(additionalMovementToString(getCarMovingStatement(Utils.extractMoveNumber())));
+            moveStateList.add(additionalMovementToString(getCarMovingStatement(getMovingState)));
 
         return stackUpMoveList(times-1, moveStateList);
     }
 
     public List<String> addToCarMoveList(){
         moveStateList = new ArrayList<>();
+
+        int getMovingState = utils.extractMoveNumber();
+
         IntStream
             .range(0,times)
-            .forEach(i -> moveStateList.add(additionalMovementToString(getCarMovingStatement(Utils.extractMoveNumber()))));
+            .forEach(i -> moveStateList.add(additionalMovementToString(getCarMovingStatement(getMovingState))));
 
 
         return moveStateList;

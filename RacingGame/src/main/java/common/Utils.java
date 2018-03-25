@@ -8,7 +8,7 @@ import java.util.Random;
  */
 
 public class Utils {
-    public static int extractMoveNumber(){
+    public int extractMoveNumber(){
         Random rand = new Random();
         return rand.nextInt(10);
     }

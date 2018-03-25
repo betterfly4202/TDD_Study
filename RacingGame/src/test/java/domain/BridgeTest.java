@@ -43,5 +43,11 @@ public class BridgeTest {
         racingGame = new RacingGameImpl(3, 5);
         racingGame.printMap();
     }
+
+    @Test
+    public void 리스트가져오기(){
+//        CarMoveState state = new CarMoveState("aaa");
+//        System.out.println(state.getCarMoveList());
+    }
 }
 
