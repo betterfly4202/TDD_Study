@@ -1,6 +1,8 @@
 package common;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by betterFLY on 2018. 2. 24.
@@ -23,4 +25,20 @@ public class Utils {
         }
         return arrStr;
     }
+
+
+    // 정규표현식 문자열 쪼개기
+    public static String [] fromRegexGetSplitValue(String inputValue){
+        Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(inputValue);
+
+        if(matcher.find()){
+            String customDelimeter = matcher.group(1);
+            return matcher.group(2).split(customDelimeter);
+        }
+
+        return inputValue.split(",|;");
+    }
+
+    // 문자열 쪼갠 후 연산 처리하기
+
 }
