@@ -8,7 +8,10 @@ import java.util.Map;
  */
 
 public class Car {
-    //이건 Map
-    private Map<Integer, CarMoveState> car;
+
+    private String carName;
+    private int rounds;
+
+
 
 }

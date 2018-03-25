@@ -46,7 +46,7 @@ public class BridgeTest {
 
     @Test
     public void 리스트가져오기(){
-//        CarMoveState state = new CarMoveState("aaa");
+//        CarMoveStateTest state = new CarMoveStateTest("aaa");
 //        System.out.println(state.getCarMoveList());
     }
 }

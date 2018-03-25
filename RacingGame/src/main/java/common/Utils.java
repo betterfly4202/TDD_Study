@@ -26,7 +26,7 @@ public class Utils {
 
         while(true){
 
-            System.out.println("게임에 참가할 "+ comment + "을(를) 입력해주세요 : ");
+            System.out.print("게임에 참가할 "+ comment + "을(를) 입력해주세요 : ");
             try {
                 inputNum = makeScannerInstance();
                 break;

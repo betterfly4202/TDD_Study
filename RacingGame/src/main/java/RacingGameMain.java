@@ -1,3 +1,4 @@
+import controller.InputRacingGameController;
 import domain.RacingGameImpl;
 
 import java.util.Scanner;
@@ -8,23 +9,13 @@ import java.util.Scanner;
  */
 
 public class RacingGameMain {
+
     public static void main(String [] args) {
-        int cars = getCars();
-        int times = getTimes();
-        RacingGameImpl racingGame = new RacingGameImpl(cars, times);
+        InputRacingGameController controller = new InputRacingGameController();
+        int cars = controller.getCarNumber();
+        int rounds = controller.getRoundNumber();
+        RacingGameImpl racingGame = new RacingGameImpl(cars, rounds);
         racingGame.start();
     }
 
-    public static int getCars(){
-        Scanner cars = new Scanner(System.in);
-        System.out.print("경주에 참여할 자동차 수를 입력해주세요 : ");
-        return cars.nextInt();
-    }
-
-    public static int getTimes(){
-        Scanner times = new Scanner(System.in);
-        System.out.print("진행할 라운드를 입력해주세요 : ");
-
-        return times.nextInt();
-    }
 }
