@@ -10,11 +10,7 @@ import java.util.stream.IntStream;
  * Created by betterFLY on 2018. 3. 25.
  * Github : http://github.com/betterfly88
  */
-
-
-
-
-public class RacingGameInRound {
+public class GameRound {
 
     private CarMoveState carMoveState;
 

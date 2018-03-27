@@ -5,19 +5,17 @@ package domain;
  * Github : http://github.com/betterfly88
  */
 
-import dto.MOVING_TYPE;
-import entity.CarMoveState;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RacingGameInRoundTest {
-    private RacingGameInRound round;
+    private GameRound round;
 
     @Before
     public void setUp(){
-        round = new RacingGameInRound();
+        round = new GameRound();
     }
 
 
