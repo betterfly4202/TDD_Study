@@ -24,4 +24,5 @@ public class CarMoveStateTest {
         state.addCarMoveState(MOVING_TYPE.MOVE);
         assertThat(state.getMoveList()).contains(MOVING_TYPE.MOVE);
     }
+
 }

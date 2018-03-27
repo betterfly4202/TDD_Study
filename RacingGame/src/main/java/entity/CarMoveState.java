@@ -21,9 +21,7 @@ public class CarMoveState {
     }
 
     public List<MOVING_TYPE> addCarMoveState(MOVING_TYPE moveType){
-//        IntStream
-//                .range(0,rounds)
-//                .forEach(i -> carMoveList.add(moveType));
+
         carMoveList.add(moveType);
 
         return this.carMoveList;
