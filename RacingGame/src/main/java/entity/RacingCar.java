@@ -1,5 +1,7 @@
 package entity;
 
+import domain.GameRound;
+
 import java.util.Map;
 
 /**
@@ -16,8 +18,13 @@ public class RacingCar {
     private int cars;
     Map<Integer, CarMoveState> carInfo;
 
-    RacingCar(int cars){
-        this.cars = cars;
-    }
+    GameRound gameRound = new GameRound();
 
+    RacingCar(int cars, int round){
+        this.cars = cars;
+
+        //이렇게 객체를 생성한다면 자동차 생성과 동시에 라운드 정보를 담을 수 있기는 한데..
+        carInfo.put(cars, gameRound.addRoundForCarMovement(round));
+
+    }
 }

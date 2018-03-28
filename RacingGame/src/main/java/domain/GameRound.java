@@ -36,7 +36,4 @@ public class GameRound {
         return carMoveState;
     }
 
-    public void aaa(){
-        System.out.println(carMoveState.getMoveList());
-    }
 }
