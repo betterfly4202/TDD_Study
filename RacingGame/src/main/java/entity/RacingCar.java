@@ -16,15 +16,21 @@ public class RacingCar {
     // FIXME
 
     private int cars;
-    Map<Integer, CarMoveState> carInfo;
+    private int round;
+    private Map<Integer, CarMoveState> carInfo;
+    private GameRound gameRound = new GameRound();
 
-    GameRound gameRound = new GameRound();
-
-    RacingCar(int cars, int round){
+    RacingCar(int cars){
         this.cars = cars;
+        makeCarRacingInfo(this.round);
+    }
 
-        //이렇게 객체를 생성한다면 자동차 생성과 동시에 라운드 정보를 담을 수 있기는 한데..
+    public Map<Integer, CarMoveState> makeCarRacingInfo(int round){
         carInfo.put(cars, gameRound.addRoundForCarMovement(round));
+        return carInfo;
+    }
 
+    public Map<Integer, CarMoveState> getCarInfo(){
+        return carInfo;
     }
 }
