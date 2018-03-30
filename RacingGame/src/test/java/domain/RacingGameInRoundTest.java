@@ -22,7 +22,6 @@ public class RacingGameInRoundTest {
     @Test
     public void 라운드_결과(){
         round.addRoundForCarMovement(5);
-        round.aaa();
     }
 
 }
