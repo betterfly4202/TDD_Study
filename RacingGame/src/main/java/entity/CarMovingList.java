@@ -12,10 +12,10 @@ import java.util.stream.IntStream;
  */
 
 
-public class CarMoveState {
+public class CarMovingList {
     private List<MOVING_TYPE> carMoveList;
 
-    public CarMoveState(){
+    public CarMovingList(){
         carMoveList = new ArrayList<>();
 
     }

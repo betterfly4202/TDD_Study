@@ -7,16 +7,15 @@ package entity;
 import dto.MOVING_TYPE;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class CarMoveStateTest {
-    private CarMoveState state;
+public class CarMovingListTest {
+    private CarMovingList state;
 
     @Before
     public void setUp(){
-        state = new CarMoveState();
+        state = new CarMovingList();
     }
 
     @Test

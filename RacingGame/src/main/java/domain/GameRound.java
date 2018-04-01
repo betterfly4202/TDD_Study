@@ -2,7 +2,7 @@ package domain;
 
 import common.Utils;
 import dto.MOVING_TYPE;
-import entity.CarMoveState;
+import entity.CarMovingList;
 
 import java.util.stream.IntStream;
 
@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
  */
 public class GameRound {
 
-    private CarMoveState carMoveState;
+    private CarMovingList carMoveState;
 
     private MOVING_TYPE isCheckedMovingState(int randNum) {
         if(randNum > 4 )
@@ -26,8 +26,8 @@ public class GameRound {
         return isCheckedMovingState(Utils.extractMoveNumber());
     }
 
-    public CarMoveState addRoundForCarMovement(int round){
-        carMoveState = new CarMoveState();
+    public CarMovingList addRoundForCarMovement(int round){
+        carMoveState = new CarMovingList();
 
         IntStream
                 .range(0, round)

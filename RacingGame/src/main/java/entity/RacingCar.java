@@ -17,7 +17,7 @@ public class RacingCar {
 
     private int cars;
     private int round;
-    private Map<Integer, CarMoveState> carInfo;
+    private Map<Integer, CarMovingList> carInfo;
     private GameRound gameRound = new GameRound();
 
     RacingCar(int cars){
@@ -25,12 +25,16 @@ public class RacingCar {
         makeCarRacingInfo(this.round);
     }
 
-    public Map<Integer, CarMoveState> makeCarRacingInfo(int round){
+    RacingCar(){
+
+    }
+
+    public Map<Integer, CarMovingList> makeCarRacingInfo(int round){
         carInfo.put(cars, gameRound.addRoundForCarMovement(round));
         return carInfo;
     }
 
-    public Map<Integer, CarMoveState> getCarInfo(){
+    public Map<Integer, CarMovingList> getCarInfo(){
         return carInfo;
     }
 }
