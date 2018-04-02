@@ -15,7 +15,7 @@ public class RacingGameInRoundTest {
 
     @Before
     public void setUp(){
-        round = new GameRound();
+        round = new GameRoundImpl();
     }
 
 

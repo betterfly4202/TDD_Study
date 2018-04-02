@@ -7,7 +7,6 @@ package entity;
 import dto.MOVING_TYPE;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -24,6 +23,9 @@ public class RacingCarTest {
     public void 자동차_이동리스트(){
         car.makeCarRacingInfo(5);
         System.out.println(car.getCarInfo());
+
+        car.sysOutCarInfo();
+
 //        assertThat(state.getMoveList()).contains(MOVING_TYPE.MOVE);
     }
 }
