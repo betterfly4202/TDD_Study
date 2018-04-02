@@ -11,6 +11,6 @@ import java.util.List;
  */
 
 abstract class RacingGame {
-    protected abstract RacingCar getGameResult();
+    protected abstract RacingCar setGameResult();
 
 }

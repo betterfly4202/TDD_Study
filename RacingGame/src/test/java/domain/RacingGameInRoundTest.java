@@ -29,6 +29,13 @@ public class RacingGameInRoundTest {
     @Test
     public void 결과(){
 //        game.getGameResult();
-        game.output(game.getGameResult());
+//        game.output(game.getGameResult());
+//        game.getGameResult();
+        for(int i=0; i<game.setGameResult().getCarInfo().size(); i++){
+//            System.out.println(game.carMoveResult(game.setGameResult() ,i));
+        }
+
+
     }
+
 }

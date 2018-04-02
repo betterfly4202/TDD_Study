@@ -23,7 +23,7 @@ public class RacingGameImpl extends RacingGame {
     }
 
     @Override
-    protected RacingCar getGameResult() {
+    protected RacingCar setGameResult() {
         car = new RacingCar(this.cars);
 
         IntStream
@@ -34,11 +34,21 @@ public class RacingGameImpl extends RacingGame {
     }
 
     public void output(RacingCar car){
-        for(int i=0; i<this.cars; i++){
+        for(int i=1; i<=rounds; i++){
             System.out.println("라운드 : "+i);
-            for(int j=0; j<rounds; j++){
-                System.out.println(car.getCarInfo().get(i).getMoveList().get(j).getType());
+            for(int j=0; j<this.cars; j++){
+                System.out.println(car.getCarInfo().get(j).getStringMoveList().get(i-1));
             }
         }
     }
+
+    public CarMovingList roundResult(RacingCar racingCar, int car){
+        return racingCar.getCarInfo().get(car);
+    }
+
+    //TODO MAP + LIST로 결과받으니까 객체 관리가 너무나 까다롭다
+    //TODO 1. compareTo 사용해서 List의 Length 중 가장 높은 것을 찾아야 하고
+    //TODO 2. 각각의 라운드 별 결과를 분리해서 출력해야한다.
+
+
 }

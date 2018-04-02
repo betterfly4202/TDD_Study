@@ -30,7 +30,7 @@ public class GameRoundImpl implements GameRound{
 
         IntStream
                 .range(0, round)
-                .forEach(i -> carMoveState.addCarMoveState(getCarMovingStatement()));
+                .forEach(i -> carMoveState.addCarMoveList(getCarMovingStatement()));
 
         return carMoveState;
     }
