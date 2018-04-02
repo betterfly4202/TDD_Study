@@ -22,28 +22,32 @@ public class RacingCar {
     private Map<Integer, CarMovingList> carInfo;
     private GameRoundImpl gameRound = new GameRoundImpl();
 
-    RacingCar(int cars){
+    public RacingCar(int cars){
         this.cars = cars;
-        carInfo = new HashMap<Integer, CarMovingList>();
+//        this.rounds = rounds;
+        this.carInfo = new HashMap<Integer, CarMovingList>();
     }
 
-    public Map<Integer, CarMovingList> makeCarRacingInfo(int round){
-        IntStream
-                .range(0, cars)
-                .forEach(i -> carInfo.put(i,gameRound.addRoundForCarMovement(round)));
+    public RacingCar(){
+        this.carInfo = new HashMap<Integer, CarMovingList>();
+    }
 
-        return carInfo;
+//    public Map<Integer, CarMovingList> makeCarRacingInfo(int round){
+//        IntStream
+//                .range(0, cars)
+//                .forEach(i -> this.carInfo.put(i,gameRound.addRoundForCarMovement(round)));
+//
+//        return this.carInfo;
+//    }
+
+    public Map<Integer, CarMovingList> addCarRacingInfo(int cars, int rounds){
+        this.carInfo.put(cars, gameRound.addRoundForCarMovement(rounds));
+
+        return this.carInfo;
     }
 
     public Map<Integer, CarMovingList> getCarInfo(){
 
-        return carInfo;
+        return this.carInfo;
     }
-
-    public void sysOutCarInfo(){
-        for(int i=0; i<carInfo.size(); i++){
-            System.out.println(" >>> "+carInfo.get(i));
-        }
-    }
-
 }

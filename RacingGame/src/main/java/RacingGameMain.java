@@ -15,7 +15,7 @@ public class RacingGameMain {
         int cars = controller.getCarNumber();
         int rounds = controller.getRoundNumber();
         RacingGameImpl racingGame = new RacingGameImpl(cars, rounds);
-        racingGame.start();
+//        racingGame.start();
     }
 
 }

@@ -12,9 +12,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RacingGameInRoundTest {
     private GameRound round;
+    private RacingGameImpl game;
 
     @Before
     public void setUp(){
+        game = new RacingGameImpl(3,5);
         round = new GameRoundImpl();
     }
 
@@ -24,4 +26,8 @@ public class RacingGameInRoundTest {
         round.addRoundForCarMovement(5);
     }
 
+    @Test
+    public void 결과(){
+        game.racingGameProcess(5);
+    }
 }

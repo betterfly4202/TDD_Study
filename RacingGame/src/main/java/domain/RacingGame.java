@@ -1,6 +1,7 @@
 package domain;
 
 import dto.MOVING_TYPE;
+import entity.RacingCar;
 
 import java.util.List;
 
@@ -12,14 +13,5 @@ import java.util.List;
 abstract class RacingGame {
     protected abstract void start();
 
-    protected abstract MOVING_TYPE getCarMovingStatement(int num);
-
-    protected abstract String additionalMovementToString(MOVING_TYPE type);
-
-    protected abstract int stackUpMoveList(int times, List<String> moveStateList);
-
-    protected abstract int recursiveRacingGame(int cars);
-
-    protected abstract void stream();
-
+    protected abstract RacingCar racingGameProcess(int rounds);
 }

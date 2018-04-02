@@ -21,10 +21,8 @@ public class RacingCarTest {
 
     @Test
     public void 자동차_이동리스트(){
-        car.makeCarRacingInfo(5);
+//        car.makeCarRacingInfo(5);
         System.out.println(car.getCarInfo());
-
-        car.sysOutCarInfo();
 
 //        assertThat(state.getMoveList()).contains(MOVING_TYPE.MOVE);
     }
