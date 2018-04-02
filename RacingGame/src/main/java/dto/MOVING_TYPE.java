@@ -20,4 +20,5 @@ public enum MOVING_TYPE{
     public String getType() {
         return type;
     }
+
 }

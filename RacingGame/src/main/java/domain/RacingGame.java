@@ -11,7 +11,6 @@ import java.util.List;
  */
 
 abstract class RacingGame {
-    protected abstract void start();
+    protected abstract RacingCar getGameResult();
 
-    protected abstract RacingCar racingGameProcess(int rounds);
 }

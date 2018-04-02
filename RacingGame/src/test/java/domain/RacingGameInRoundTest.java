@@ -28,6 +28,7 @@ public class RacingGameInRoundTest {
 
     @Test
     public void 결과(){
-        game.racingGameProcess(5);
+//        game.getGameResult();
+        game.output(game.getGameResult());
     }
 }

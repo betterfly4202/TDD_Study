@@ -24,4 +24,9 @@ public class CarMovingListTest {
         assertThat(state.getMoveList()).contains(MOVING_TYPE.MOVE);
     }
 
+    @Test
+    public void 자동차정보_파싱(){
+        state.addCarMoveState(MOVING_TYPE.MOVE);
+    }
+
 }
