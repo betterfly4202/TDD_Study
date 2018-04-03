@@ -5,6 +5,7 @@ package domain;
  * Github : http://github.com/betterfly88
  */
 
+import entity.CarMovingList;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,14 +29,33 @@ public class RacingGameInRoundTest {
 
     @Test
     public void 결과(){
-//        game.getGameResult();
 //        game.output(game.getGameResult());
 //        game.getGameResult();
         for(int i=0; i<game.setGameResult().getCarInfo().size(); i++){
 //            System.out.println(game.carMoveResult(game.setGameResult() ,i));
         }
+    }
 
+    @Test
+    public void 라운드결과_리스트(){
+        CarMovingList list;
 
+        for(int i=0; i<game.cars; i++){
+            list = game.resultInCars(game.setGameResult(), i);
+            System.out.println(i+"라운드 : ");
+            for(int j=0; j<game.rounds; j++){
+                System.out.println(game.resultInRounds(list, j));
+            }
+            System.out.println();
+        }
+
+    }
+
+    @Test
+    public void 순위길이(){
+        for(int i=0; i<game.cars; i++) {
+            game.moveLength(game.setGameResult(), i);
+        }
     }
 
 }
