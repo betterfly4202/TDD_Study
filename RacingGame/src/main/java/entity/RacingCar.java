@@ -15,9 +15,6 @@ import java.util.stream.IntStream;
  */
 
 public class RacingCar {
-    // TODO 어떻게 라운드 객체와 엮어야 할지 고민해야함
-    // FIXME
-
     private int cars;
     private Map<Integer, CarMovingList> carInfo;
     private GameRoundImpl gameRound = new GameRoundImpl();
@@ -25,10 +22,6 @@ public class RacingCar {
     public RacingCar(int cars){
         this.cars = cars;
 //        this.rounds = rounds;
-        this.carInfo = new HashMap<Integer, CarMovingList>();
-    }
-
-    public RacingCar(){
         this.carInfo = new HashMap<Integer, CarMovingList>();
     }
 
@@ -43,7 +36,6 @@ public class RacingCar {
 
         return this.carInfo;
     }
-
 
     public Map<Integer, CarMovingList> getCarInfo(){
 

@@ -44,11 +44,11 @@ public class RacingGameImpl extends RacingGame {
         return moveList.getStringMoveList().get(round);
     }
 
-    public int moveLength(RacingCar racingCar, int car){
-        return racingCar.getCarInfo().get(car).getStringMoveList().get(this.rounds).length();
+    public int moveLength(RacingCar racingCar, int car, int rounds){
+        return racingCar.getCarInfo().get(car).getStringMoveList().get(rounds-1).length();
     }
 
     //TODO MAP + LIST로 결과받으니까 객체 관리가 너무나 까다롭다
-    //TODO 1. compareTo 사용해서 List의 Length 중 가장 높은 것을 찾아야 하고
-    //TODO 2. 각각의 라운드 별 결과를 분리해서 출력해야한다.
+    // 1. compareTo 사용해서 List의 Length 중 가장 높은 것을 찾아야 하고
+    // 2. 각각의 라운드 별 결과를 분리해서 출력해야한다.
 }

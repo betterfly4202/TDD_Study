@@ -9,6 +9,10 @@ import entity.CarMovingList;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RacingGameInRoundTest {
@@ -42,20 +46,24 @@ public class RacingGameInRoundTest {
 
         for(int i=0; i<game.cars; i++){
             list = game.resultInCars(game.setGameResult(), i);
-            System.out.println(i+"라운드 : ");
+            System.out.println(i+1+"번 차");
             for(int j=0; j<game.rounds; j++){
-                System.out.println(game.resultInRounds(list, j));
+                System.out.println(j+1+"라운드 : "+game.resultInRounds(list, j));
             }
             System.out.println();
         }
-
     }
 
     @Test
-    public void 순위길이(){
-        for(int i=0; i<game.cars; i++) {
-            game.moveLength(game.setGameResult(), i);
-        }
-    }
+    public void 순위구하기(){
+        Map<String, Integer> rankResult = new HashMap<>();
 
+        int rank = game.moveLength(game.setGameResult(), 0, game.rounds);
+        for(int i=0; i<game.cars; i++){
+            int temp = game.moveLength(game.setGameResult(), i, game.rounds);
+            rank = temp > rank ? temp : rank;
+        }
+        System.out.println(rank);
+
+    }
 }
