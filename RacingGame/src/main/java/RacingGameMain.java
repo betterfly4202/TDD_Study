@@ -9,7 +9,6 @@ import java.util.Scanner;
  */
 
 public class RacingGameMain {
-
     public static void main(String [] args) {
         InputRacingGameController controller = new InputRacingGameController();
         int cars = controller.getCarNumber();
