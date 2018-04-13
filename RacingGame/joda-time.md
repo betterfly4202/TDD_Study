@@ -10,8 +10,9 @@
 
 ### 왜 joda-time을 사용해야 하는가
 - java.util.Date의 한계
-    1. 불행히도 Java의 기본 날짜, 시간 클래스는 불변 객체가 아니다. 앞의 코드에서 Calendar 클래스에 set 메서드를 호출해서 날짜를 지정하고, 다시 같은 객체에 set(int,int) 메서드를 호출해서 수행한 날짜 연산 결과는 같은 인스턴스에 저장되었다. Date 클래스에도 값을 바꿀 수 있는 set 메서드가 존재한다. 이 때문에 Calendar 객체나 Date 객체가 여러 객체에서 공유되면 한 곳에서 바꾼 값이 다른 곳에 영향을 미치는 부작용이 생길 수 있다. 『Effective Java 2nd Edition』(2008)의 저자 Joshua Bloch도 Date 클래스는 불변 객체여야 했다고 지적했다.
-       이를 안전하게 구현하려면 이들 객체를 복사해서 반환하는 기법을 권장한다.
+    1. 불변 객체가 아니다( not immutable) <br>
+    불행히도 Java의 기본 날짜, 시간 클래스는 불변 객체가 아니다. 앞의 코드에서 Calendar 클래스에 set 메서드를 호출해서 날짜를 지정하고, 다시 같은 객체에 set(int,int) 메서드를 호출해서 수행한 날짜 연산 결과는 같은 인스턴스에 저장되었다. Date 클래스에도 값을 바꿀 수 있는 set 메서드가 존재한다. 이 때문에 Calendar 객체나 Date 객체가 여러 객체에서 공유되면 한 곳에서 바꾼 값이 다른 곳에 영향을 미치는 부작용이 생길 수 있다. 『Effective Java 2nd Edition』(2008)의 저자 Joshua Bloch도 Date 클래스는 불변 객체여야 했다고 지적했다.
+    이를 안전하게 구현하려면 이들 객체를 복사해서 반환하는 기법을 권장한다.
        
     2. int 상수 필드의 남용
     <pre> 
@@ -92,7 +93,7 @@
 
 ~~~
 
-#### gradle dependencyy
+#### gradle
 ~~~groovy
 compile group: 'joda-time', name: 'joda-time', version: '2.9.9' 
 testCompile group: 'org.assertj', name: 'assertj-core', version: '3.9.1'
