@@ -86,7 +86,7 @@ public class TDDTest {
     }
 
     @Test
-    public void 자바_유틸(){
+    public void 자바_캘린더_기본(){
         Calendar calendar = Calendar.getInstance();
         calendar.set(2000, Calendar.JANUARY, 1, 0, 0, 0);
 
@@ -100,12 +100,6 @@ public class TDDTest {
     public void 조다타임_기본(){
         DateTime dateTime = new DateTime(2018, 4, 13, 0, 0, 0, 0);
         System.out.println(dateTime.plusDays(90).toString("yyyy-MM-dd E HH:mm:ss.SSS"));
-
-        DateTime utcTime = new DateTime(2013, 6, 10, 0, 0, DateTimeZone.UTC);
-        DateTime cestTime = new DateTime(2013, 6, 10, 2, 0, DateTimeZone.forID("Europe/Berlin"));
-
-        assertThat(utcTime).as("in UTC time").isEqualTo(cestTime);
-
     }
 
     @Test
@@ -117,8 +111,8 @@ public class TDDTest {
         String result2 = DateTimeFormat.forPattern("MM월dd일 HH:mm").withLocale(new Locale("ko")).print(nowTime);
         assertThat(result2).isEqualTo("04월13일 00:23");
 
-        DateTime utcTime = new DateTime(2013, 6, 10, 0, 0, DateTimeZone.UTC);
-        DateTime cestTime = new DateTime(2013, 6, 10, 2, 0, DateTimeZone.forID("Europe/Berlin"));
+        DateTime utcTime = new DateTime(2013, 6, 9, 17, 0, DateTimeZone.UTC);
+        DateTime cestTime = new DateTime(2013, 6, 10, 2, 0, DateTimeZone.forID("Asia/Seoul"));
 
         assertThat(utcTime).as("in UTC time").isEqualTo(cestTime);
 
@@ -152,7 +146,6 @@ public class TDDTest {
         dateTime1 = new DateTime(2000, 1, 1, 23, 59, 59, 999, UTC);
         dateTime2 = new DateTime(2000, 1, 1, 00, 00, 00, 000, UTC);
         assertThat(dateTime1).isEqualToIgnoringHours(dateTime2);
-
     }
 
     @Test
