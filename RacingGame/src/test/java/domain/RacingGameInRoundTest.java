@@ -15,6 +15,10 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import static org.assertj.core.api.Assertions.in;
+import static org.assertj.core.api.Assertions.not;
+import static org.assertj.core.api.Assertions.notIn;
+
 public class RacingGameInRoundTest {
     private GameRound round;
     private RacingGameImpl game;
