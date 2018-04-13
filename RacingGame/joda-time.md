@@ -1,5 +1,8 @@
-![joda](/resources/img/joda.jpg)
-##AssertJ assertions for Joda-Time
+![joda](./img/joda.jpg)
+
+
+
+## AssertJ assertions for Joda-Time
 
 
 
@@ -11,12 +14,16 @@
        이를 안전하게 구현하려면 이들 객체를 복사해서 반환하는 기법을 권장한다.
        
     2. int 상수 필드의 남용
-    > calendar.add(Calendar.SECOND, 2);
+    <pre> 
+        calendar.add(Calendar.SECOND, 2);
+    </pre>
     
     첫 번째 파라미터에 Calendar.JUNE과 같이, 전혀 엉뚱한 상수가 들어가도 이를 컴파일 시점에서 확인할 방법이 없다. 이 뿐만 아니라 Calendar 클래스에는 많은 int 상수가 쓰였는데, 이어서 설명할 월, 요일 지정 등에서도 많은 혼란을 유발한다.
     
     3. 헷갈리는 월 지정
-    >calendar.set(1582, Calendar.OCTOBER , 4);
+    <pre>
+        calendar.set(1582, Calendar.OCTOBER , 4);
+    </pre>
     
     그런데 월에 해당하는 Calendar.OCTOBER 값은 실제로는 '9'이다. JDK 1.0에서 Date 클래스는 1월을 0으로 표현했고, JDK 1.1부터 포함된 Calendar 클래스도 이러한 관례를 답습했다. 그래서 1582년 10월 4일을 표현하는 코드를 다음과 같이 쓰는 실수를 많은 개발자들이 반복하고 있다.
     
@@ -67,12 +74,15 @@
 ### Joda-Time 사용
 
 
-> maven <br>
+#### maven dependency
+~~~xml
 <dependency>
     <groupId>joda-time</groupId>
     <artifactId>joda-time</artifactId>
     <version>2.9.9</version>
-</dependency> <br/>
+</dependency>
+
+<!-- assertj-test-->
 <dependency>
     <groupId>org.assertj</groupId>
     <artifactId>assertj-core</artifactId>
@@ -80,11 +90,13 @@
     <scope>test</scope>
 </dependency>
 
+~~~
 
-> gradle <br>
-compile group: 'joda-time', name: 'joda-time', version: '2.9.9' <br/>
+#### gradle dependencyy
+~~~groovy
+compile group: 'joda-time', name: 'joda-time', version: '2.9.9' 
 testCompile group: 'org.assertj', name: 'assertj-core', version: '3.9.1'
-
+~~~
 
 - **java.utils.Calendar** vs **jodatime**
     - java.utils.Calendar
@@ -114,80 +126,90 @@ testCompile group: 'org.assertj', name: 'assertj-core', version: '3.9.1'
 
 - assertj in jodatime
 
-~~~java
-
-    @Test
-    public void 패턴비교(){
-        DateTime nowTime = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").parseDateTime("2018-04-13 00:23:54");
-        String result = DateTimeFormat.forPattern("aa").withLocale(new Locale("ko")).print(nowTime);
-        assertThat(result).isEqualTo("오전");
-
-        String result2 = DateTimeFormat.forPattern("MM월dd일 HH:mm").withLocale(new Locale("ko")).print(nowTime);
-        assertThat(result2).isEqualTo("04월13일 00:23");
-
-        DateTime utcTime = new DateTime(2013, 6, 9, 17, 0, DateTimeZone.UTC);
-        DateTime cestTime = new DateTime(2013, 6, 10, 2, 0, DateTimeZone.forID("Asia/Seoul"));
-
-        assertThat(utcTime).as("in UTC time").isEqualTo(cestTime);
-
-    }
-
-~~~
-
-
-~~~java
+    - 데이터타입을 커스터마이징 하여 원하는 조건으로 비교
+    ~~~java
     
-    @Test
-    public void 시간검증_기본(){
-        assertThat(new DateTime("1999-12-30")).isBefore(new DateTime("2000-01-01"));
-        assertThat(new DateTime("2000-01-01")).isAfter(new DateTime("1999-12-30"));
+        @Test
+        public void 패턴비교(){
+            DateTime nowTime = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").parseDateTime("2018-04-13 00:23:54");
+            String result = DateTimeFormat.forPattern("aa").withLocale(new Locale("ko")).print(nowTime);
+            assertThat(result).isEqualTo("오전");
+    
+            String result2 = DateTimeFormat.forPattern("MM월dd일 HH:mm").withLocale(new Locale("ko")).print(nowTime);
+            assertThat(result2).isEqualTo("04월13일 00:23");
+    
+        }
+    
+    ~~~
 
-        assertThat(new DateTime("2000-01-01")).isBeforeOrEqualTo(new DateTime("2000-01-01"));
-        assertThat(new DateTime("2000-01-01")).isAfterOrEqualTo(new DateTime("2000-01-01"));
-    }
+    - UTC타임과 해당 지역을 비교
+    ~~~java
+    
+        @Test
+        public void 타임존(){
+            DateTime utcTime = new DateTime(2013, 6, 9, 17, 0, DateTimeZone.UTC);
+            DateTime cestTime = new DateTime(2013, 6, 10, 2, 0, DateTimeZone.forID("Asia/Seoul"));
+    
+            assertThat(utcTime).as("in UTC time").isEqualTo(cestTime);
+    
+        }
 
-~~~
+    ~~~
+    
+    - 기준시간 이전 혹은 이후 검증 
+    ~~~java
+        
+        @Test
+        public void 시간검증_기본(){
+            assertThat(new DateTime("1999-12-30")).isBefore(new DateTime("2000-01-01"));
+            assertThat(new DateTime("2000-01-01")).isAfter(new DateTime("1999-12-30"));
+    
+            assertThat(new DateTime("2000-01-01")).isBeforeOrEqualTo(new DateTime("2000-01-01"));
+            assertThat(new DateTime("2000-01-01")).isAfterOrEqualTo(new DateTime("2000-01-01"));
+        }
+    
+    ~~~
 
+    - 상세 시간을 무시하여 검증
+    ~~~java
+    
+        @Test
+        public void 시간무시(){
+            // ... milliseconds
+            DateTime dateTime1 = new DateTime(2000, 1, 1, 0, 0, 1, 0, UTC);
+            DateTime dateTime2 = new DateTime(2000, 1, 1, 0, 0, 1, 456, UTC);
+            assertThat(dateTime1).isEqualToIgnoringMillis(dateTime2);
+            // ... seconds
+            dateTime1 = new DateTime(2000, 1, 1, 23, 50, 0, 0, UTC);
+            dateTime2 = new DateTime(2000, 1, 1, 23, 50, 10, 456, UTC);
+            assertThat(dateTime1).isEqualToIgnoringSeconds(dateTime2);
+            // ... minutes
+            dateTime1 = new DateTime(2000, 1, 1, 23, 50, 0, 0, UTC);
+            dateTime2 = new DateTime(2000, 1, 1, 23, 00, 2, 7, UTC);
+            assertThat(dateTime1).isEqualToIgnoringMinutes(dateTime2);
+            // ... hours
+            dateTime1 = new DateTime(2000, 1, 1, 23, 59, 59, 999, UTC);
+            dateTime2 = new DateTime(2000, 1, 1, 00, 00, 00, 000, UTC);
+            assertThat(dateTime1).isEqualToIgnoringHours(dateTime2);
+        }
+    
+    ~~~
 
-~~~java
+    - 기준 시간내에 포함여부 검증 
+    <br/> **기준시간.isIn(A, B)** -> 기준시간이 A~B시간 사이에 해당하는지 검증 
+    ~~~java
+    
+        @Test
+        public void not_in(){
+            assertThat(new DateTime("2000-01-01")).isIn(new DateTime("1999-12-22"), new DateTime("2000-01-01")); //A~B까지의 시간안에 포함
+            assertThat(new DateTime("2000-01-01")).isNotIn(new DateTime("1999-12-31"), new DateTime("2000-01-02")); //B가 기준 날짜보다 크므로 not in 임
+            
+            assertThat(new LocalDateTime("2000-01-01")).isIn("1999-12-31", "2000-01-01").isNotIn("1999-12-31", "2000-01-02");
+        }
+    
+    ~~~
 
-    @Test
-    public void 시간무시(){
-        // ... milliseconds
-        DateTime dateTime1 = new DateTime(2000, 1, 1, 0, 0, 1, 0, UTC);
-        DateTime dateTime2 = new DateTime(2000, 1, 1, 0, 0, 1, 456, UTC);
-        assertThat(dateTime1).isEqualToIgnoringMillis(dateTime2);
-        // ... seconds
-        dateTime1 = new DateTime(2000, 1, 1, 23, 50, 0, 0, UTC);
-        dateTime2 = new DateTime(2000, 1, 1, 23, 50, 10, 456, UTC);
-        assertThat(dateTime1).isEqualToIgnoringSeconds(dateTime2);
-        // ... minutes
-        dateTime1 = new DateTime(2000, 1, 1, 23, 50, 0, 0, UTC);
-        dateTime2 = new DateTime(2000, 1, 1, 23, 00, 2, 7, UTC);
-        assertThat(dateTime1).isEqualToIgnoringMinutes(dateTime2);
-        // ... hours
-        dateTime1 = new DateTime(2000, 1, 1, 23, 59, 59, 999, UTC);
-        dateTime2 = new DateTime(2000, 1, 1, 00, 00, 00, 000, UTC);
-        assertThat(dateTime1).isEqualToIgnoringHours(dateTime2);
-    }
-
-~~~
-
-
-~~~java
-
-    @Test
-    public void not_in(){
-
-        assertThat(new DateTime("2000-01-01")).isIn(new DateTime("1999-12-22"), new DateTime("2000-01-01")); //A~B까지의 시간안에 포함
-        assertThat(new DateTime("2000-01-01")).isNotIn(new DateTime("1999-12-31"), new DateTime("2000-01-02")); //B가 기준 날짜보다 크므로 not in 임
-        // same assertions but parameters is String based representation of LocalDateTime
-        assertThat(new LocalDateTime("2000-01-01")).isIn("1999-12-31", "2000-01-01").isNotIn("1999-12-31", "2000-01-02");
-    }
-
-~~~
-
-#### 참고 자료 
+#### 참고 
 - http://d2.naver.com/helloworld/645609
 - http://joel-costigliola.github.io/assertj/assertj-joda-time.html
 - https://www.lesstif.com/display/JAVA/Joda-Time
