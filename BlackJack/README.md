@@ -1,7 +1,7 @@
 # BLACK JACK 
 ## with Test Driven Development (feat.oop)
 
-![blackjack](/img/blackjack.jpg)
+![blackjack](img/blackjack.jpg)
 
 ### 규칙
 - 카드의 숫자 계산은 숫자에 써있는 그대로. 
