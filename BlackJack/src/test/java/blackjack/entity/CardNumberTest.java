@@ -28,10 +28,7 @@ public class CardNumberTest{
 
     }
 
-    @Test
-    public void 에이스_숫자결정(){
 
-    }
 
     @Test
     public void 카드덱_만들기(){

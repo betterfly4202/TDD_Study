@@ -12,26 +12,13 @@ import org.junit.Test;
  * Github : http://github.com/betterfly88
  */
 
-
-/*
-    SPADE("♠"),
-    HEART("♥"),
-    DIAMOND("♦"),
-    CLUB("♣");
- */
-
 public class CardTest {
-    String type;
-    int num;
+    CardDeck card;
 
-    Card card;
-
-    @Before
-    public void setUp(){
-        card = new Card();
-//        card = new Card(CardShapeEntity.SPADE, CardNumberEntity.ACE);
-//        card = new Card(CardShapeEntity.DIAMOND, CardNumberEntity.THREE);
-    }
+//    @Before
+//    public void setUp(){
+//        card = new CardDeck();
+//    }
 
     @Test
     public void getCardNum(){
@@ -50,6 +37,7 @@ public class CardTest {
 
     @Test
     public void 카드덱_생성(){
+        card = new CardDeck();
         card.setCardDeckList();
         Assertions.assertThat(card.getCardDeckList().size()).isEqualTo(52);
         System.out.println(card.getCardNum());
@@ -60,10 +48,5 @@ public class CardTest {
         System.out.println(card.getCardNum());
         System.out.println(card.getCardNum());
         System.out.println(card.getCardNum());
-    }
-
-    @Test
-    public void 카드_(){
-
     }
 }
