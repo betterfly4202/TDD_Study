@@ -28,16 +28,15 @@ public class CardTest {
 
     @Before
     public void setUp(){
-        card = new Card(CardShapeEntity.HEART, CardNumberEntity.TWO);
+        card = new Card(CardShapeEntity.HEART);
+//        card = new Card(CardShapeEntity.SPADE, CardNumberEntity.ACE);
+//        card = new Card(CardShapeEntity.DIAMOND, CardNumberEntity.THREE);
     }
 
     @Test
     public void getCardNum(){
 //        Card heartCard = new Card(CardShapeEntity.HEART, CardNumberEntity.TWO);
-        card.setCardDeckList(new Card(CardShapeEntity.DIAMOND, CardNumberEntity.THREE));
-        card.setCardDeckList(new Card(CardShapeEntity.DIAMOND, CardNumberEntity.THREE));
-        card.setCardDeckList(new Card(CardShapeEntity.DIAMOND, CardNumberEntity.THREE));
-
+        System.out.println(card.getCardDeckList());
         for(Card tempCard : card.getCardDeckList()){
             System.out.println(tempCard);
         }
@@ -50,8 +49,17 @@ public class CardTest {
     }
 
     @Test
-    public void 카드_리스트추출하기(){
-
+    public void 카드덱_생성(){
+        card.setCardDeckList();
+        Assertions.assertThat(card.getCardDeckList().size()).isEqualTo(13);
+        System.out.println(card.getCardNum());
+        System.out.println(card.getCardNum());
+        System.out.println(card.getCardNum());
+        System.out.println(card.getCardNum());
+        System.out.println(card.getCardNum());
+        System.out.println(card.getCardNum());
+        System.out.println(card.getCardNum());
+        System.out.println(card.getCardNum());
     }
 
     @Test

@@ -10,16 +10,16 @@ import org.junit.Test;
  */
 
 public class CardServiceImplTest {
-    CardServiceImpl cardService;
-
-    @Before
-    public void setUp(){
-        cardService = new CardServiceImpl();
-    }
-
-    @Test
-    public void ACE_선택하기(){
-        int aceNum = cardService.isAce();
-        Assertions.assertThat(aceNum).isEqualTo(1);
-    }
+//    CardServiceImpl cardService;
+//
+//    @Before
+//    public void setUp(){
+//        cardService = new CardServiceImpl();
+//    }
+//
+//    @Test
+//    public void ACE_선택하기(){
+//        int aceNum = cardService.isAce();
+//        Assertions.assertThat(aceNum).isEqualTo(1);
+//    }
 }
