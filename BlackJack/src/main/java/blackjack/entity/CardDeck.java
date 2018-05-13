@@ -50,7 +50,6 @@ public class CardDeck extends Card{
     public void setCardDeckList(){
         mixedCardDeck();
 
-
         for (Iterator<Card> it = cardSet.iterator(); it.hasNext();) {
             cardDeck.push(it.next());
         }

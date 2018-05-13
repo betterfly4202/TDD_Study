@@ -15,10 +15,11 @@ import org.junit.Test;
 public class CardTest {
     CardDeck card;
 
-//    @Before
-//    public void setUp(){
-//        card = new CardDeck();
-//    }
+    @Before
+    public void setUp(){
+        card = new CardDeck();
+        card.setCardDeckList();
+    }
 
     @Test
     public void getCardNum(){
@@ -37,8 +38,6 @@ public class CardTest {
 
     @Test
     public void 카드덱_생성() {
-        card = new CardDeck();
-        card.setCardDeckList();
         Assertions.assertThat(card.getCardDeckList().size()).isEqualTo(52);
 
         Card firstCard = card.getCardEntity();

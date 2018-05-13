@@ -23,7 +23,7 @@ public class CardNumberTest{
     @Test
     public void 카드객체_숫자_리스트_검증(){
         Assertions.assertThat(numberEntity.values().length).isEqualTo(13);
-        Assertions.assertThat(numberEntity.ACE.getNumber()).isEqualTo("1");
+//        Assertions.assertThat(numberEntity.ACE.getNumber()).isEqualTo("1");
         Assertions.assertThat(numberEntity.valueOf("ACE").toString()).contains("ACE");
 
     }
