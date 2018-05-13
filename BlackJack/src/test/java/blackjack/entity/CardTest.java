@@ -36,17 +36,14 @@ public class CardTest {
     }
 
     @Test
-    public void 카드덱_생성(){
+    public void 카드덱_생성() {
         card = new CardDeck();
         card.setCardDeckList();
         Assertions.assertThat(card.getCardDeckList().size()).isEqualTo(52);
-        System.out.println(card.getCardNum());
-        System.out.println(card.getCardNum());
-        System.out.println(card.getCardNum());
-        System.out.println(card.getCardNum());
-        System.out.println(card.getCardNum());
-        System.out.println(card.getCardNum());
-        System.out.println(card.getCardNum());
-        System.out.println(card.getCardNum());
+
+        Card firstCard = card.getCardEntity();
+        System.out.println(firstCard.cardNum);
+        System.out.println(firstCard.cardShape);
     }
+
 }
