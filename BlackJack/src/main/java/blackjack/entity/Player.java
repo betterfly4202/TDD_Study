@@ -6,4 +6,5 @@ package blackjack.entity;
  */
 
 public class Player {
+
 }
