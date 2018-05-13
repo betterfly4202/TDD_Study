@@ -15,8 +15,8 @@ class Card{
     public CardNumberEntity cardNum;
     private static Stack<Card> cardDeck = new Stack<>();
 
-    public Card(CardShapeEntity cardShape){
-        this.cardShape = cardShape;
+    public Card(){
+
     }
 
     public Card(CardShapeEntity cardShape, CardNumberEntity cardNum){
@@ -26,8 +26,12 @@ class Card{
     }
 
     public void setCardDeckList(){
-        for(CardNumberEntity numberEntity : CardNumberEntity.values()){
-            cardDeck.push(new Card(this.cardShape, numberEntity));
+        for(CardShapeEntity shapeEntity : CardShapeEntity.values()) {
+            this.cardShape = shapeEntity;
+
+            for (CardNumberEntity numberEntity : CardNumberEntity.values()) {
+                cardDeck.push(new Card(this.cardShape, numberEntity));
+            }
         }
     }
 
@@ -37,22 +41,5 @@ class Card{
 
     public CardNumberEntity getCardNum(){
         return cardDeck.pop().cardNum;
-    }
-
-
-}
-
-abstract class CardBuilder{
-    public abstract void buildCardDeck();
-}
-
-class SpadeCard extends Card{
-    public SpadeCard(CardShapeEntity cardShape) {
-        super(cardShape);
-    }
-
-    @Override
-    public void setCardDeckList() {
-        super.setCardDeckList();
     }
 }

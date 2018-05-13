@@ -28,7 +28,7 @@ public class CardTest {
 
     @Before
     public void setUp(){
-        card = new Card(CardShapeEntity.HEART);
+        card = new Card();
 //        card = new Card(CardShapeEntity.SPADE, CardNumberEntity.ACE);
 //        card = new Card(CardShapeEntity.DIAMOND, CardNumberEntity.THREE);
     }
@@ -51,7 +51,7 @@ public class CardTest {
     @Test
     public void 카드덱_생성(){
         card.setCardDeckList();
-        Assertions.assertThat(card.getCardDeckList().size()).isEqualTo(13);
+        Assertions.assertThat(card.getCardDeckList().size()).isEqualTo(52);
         System.out.println(card.getCardNum());
         System.out.println(card.getCardNum());
         System.out.println(card.getCardNum());
