@@ -1,5 +1,6 @@
 package blackjack.entity;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,13 +20,16 @@ public class PlayerTest {
 
     private CardDeck cardDeck;
     Player player;
+    Player dealer;
+    PlayerEntity user;
 
     @Before
     public void setUp(){
         cardDeck = new CardDeck();
         cardDeck.setCardDeckList();
 
-        player = new Player(PlayerEntity.USER);
+        dealer = new Player(PlayerEntity.DEALER);
+        player = new Player(PlayerEntity.USER, 2000);
     }
 
     @Test
@@ -40,5 +44,12 @@ public class PlayerTest {
         assertThat(player.getUserCardDeckList().get(0)).extracting("cardShape").containsAnyOf(CLUB, HEART, DIAMOND, SPADE);
         assertThat(player.getUserCardDeckList().get(1)).extracting("cardShape").containsAnyOf(CLUB, HEART, DIAMOND, SPADE);
 //        assertThat(player.getUserCardDeckList().get(2)).isNull();
+    }
+
+    @Test
+    public void 유저_딜러_코스트_비교(){
+        Assertions.assertThat(player.getCosts()).isEqualTo(2000);
+        Assertions.assertThat(dealer.getCosts()).isNotNull();
+
     }
 }

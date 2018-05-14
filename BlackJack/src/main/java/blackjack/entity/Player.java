@@ -8,9 +8,16 @@ import java.util.List;
  * Github : http://github.com/betterfly88
  */
 
-public class Player {
+public class Player{
     private PlayerEntity player;
+    private int costs;
     private List<Card> userCardRepository;
+
+    Player(PlayerEntity player, int costs){
+        userCardRepository = new ArrayList<>();
+        this.player = player;
+        this.costs = costs;
+    }
 
     Player(PlayerEntity player){
         userCardRepository = new ArrayList<>();
@@ -25,5 +32,9 @@ public class Player {
 
     public List<Card> getUserCardDeckList(){
         return userCardRepository;
+    }
+
+    public int getCosts(){
+        return costs;
     }
 }
