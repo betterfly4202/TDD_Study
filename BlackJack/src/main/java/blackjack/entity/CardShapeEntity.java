@@ -1,7 +1,5 @@
 package blackjack.entity;
 
-import java.util.Map;
-
 /**
  * Created by betterFLY on 2018. 5. 11.
  * Github : http://github.com/betterfly88

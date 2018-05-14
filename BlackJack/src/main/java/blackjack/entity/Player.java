@@ -2,6 +2,8 @@ package blackjack.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by betterFLY on 2018. 5. 12.
@@ -24,13 +26,14 @@ public class Player{
         this.player = player;
     }
 
-    public void defaultUserCardDeck(Card card){
+    private void defaultUserCardDeck(Card card){
         for(int i=0; i<2; i++){
             userCardRepository.add(card);
         }
     }
 
-    public List<Card> getUserCardDeckList(){
+    public List<Card> getUserCardDeckList(Card card){
+        defaultUserCardDeck(card);
         return userCardRepository;
     }
 

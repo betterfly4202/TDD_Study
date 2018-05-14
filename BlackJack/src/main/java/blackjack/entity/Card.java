@@ -1,9 +1,5 @@
 package blackjack.entity;
 
-import blackjack.common.Utils;
-
-import java.util.*;
-
 /**
  * Created by betterFLY on 2018. 4. 27.
  * Github : http://github.com/betterfly88

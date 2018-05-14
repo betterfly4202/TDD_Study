@@ -1,10 +1,5 @@
 package blackjack.entity;
 
-import java.io.Serializable;
-import java.util.List;
-
-import static blackjack.entity.BettingCosts.costs;
-
 /**
  * Created by betterFLY on 2018. 5. 12.
  * Github : http://github.com/betterfly88

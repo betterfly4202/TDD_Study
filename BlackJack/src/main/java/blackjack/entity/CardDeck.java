@@ -43,7 +43,7 @@ public class CardDeck extends Card{
         return cardSet;
     }
 
-    public void clearCardDeck(){
+    private void clearCardDeck(){
         cardSet.removeAll(cardSet);
     }
 
@@ -63,4 +63,5 @@ public class CardDeck extends Card{
     public Card getCardEntity(){
         return cardDeck.pop();
     }
+
 }

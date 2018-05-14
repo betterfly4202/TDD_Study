@@ -34,15 +34,17 @@ public class PlayerTest {
 
     @Test
     public void 유저_카드덱_기본(){
-        player.defaultUserCardDeck(cardDeck.getCardEntity());
+        player.getUserCardDeckList(cardDeck.getCardEntity());
     }
 
     @Test
     public void 유저_카드덱_가져오기(){
-        player.defaultUserCardDeck(cardDeck.getCardEntity());
-        assertThat(player.getUserCardDeckList().size()).isEqualTo(2);
-        assertThat(player.getUserCardDeckList().get(0)).extracting("cardShape").containsAnyOf(CLUB, HEART, DIAMOND, SPADE);
-        assertThat(player.getUserCardDeckList().get(1)).extracting("cardShape").containsAnyOf(CLUB, HEART, DIAMOND, SPADE);
+        List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
+        assertThat(userCard.size()).isEqualTo(2);
+        assertThat(userCard.get(0)).extracting("cardShape").containsAnyOf(CLUB, HEART, DIAMOND, SPADE);
+        assertThat(userCard.get(1)).extracting("cardShape").containsAnyOf(CardShapeEntity.values());
+        assertThat(userCard.get(0)).extracting("cardNum").containsAnyOf(CardNumberEntity.values());
+        Assertions.assertThat(player.getCosts()).isEqualTo(2000);
 //        assertThat(player.getUserCardDeckList().get(2)).isNull();
     }
 
