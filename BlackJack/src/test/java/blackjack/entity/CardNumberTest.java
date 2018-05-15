@@ -28,8 +28,6 @@ public class CardNumberTest{
 
     }
 
-
-
     @Test
     public void 카드덱_만들기(){
 
