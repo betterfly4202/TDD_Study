@@ -1,5 +1,7 @@
 package blackjack.domain;
 
+import blackjack.entity.CardNumberEntity;
+
 import javax.smartcardio.Card;
 import java.util.Scanner;
 
@@ -10,29 +12,37 @@ import java.util.Scanner;
 
 public class BlackJackServiceImpl implements BlackJackService {
     @Override
-    public int isAce() {
-        Scanner sc = new Scanner(System.in);
+    public boolean isAce(CardNumberEntity cardNumber){
+        if(cardNumber.equals(CardNumberEntity.ACE)){
+            return true;
+        }
 
-        return sc.nextInt();
+        return false;
     }
 
     @Override
-    public Card isHit() {
-        return null;
+    public boolean isBlackJack(Card card) {
+        return false;
     }
 
     @Override
-    public Card isStand() {
-        return null;
+    public boolean isHit(Card card) {
+        return false;
     }
 
     @Override
-    public Card isBust() {
-        return null;
+    public boolean isStand(Card card) {
+        return false;
     }
 
     @Override
-    public Card compareWithCard() {
+    public boolean isBust(Card card) {
+        return false;
+    }
+
+    @Override
+    public Card compareWithCard(Card card) {
         return null;
     }
+
 }

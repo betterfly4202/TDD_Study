@@ -1,5 +1,6 @@
 package blackjack.domain;
 
+import blackjack.entity.CardNumberEntity;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,16 +11,16 @@ import org.junit.Test;
  */
 
 public class BlackJackServiceImplTest {
-//    BlackJackServiceImpl cardService;
-//
-//    @Before
-//    public void setUp(){
-//        cardService = new BlackJackServiceImpl();
-//    }
-//
-//    @Test
-//    public void ACE_선택하기(){
-//        int aceNum = cardService.isAce();
-//        Assertions.assertThat(aceNum).isEqualTo(1);
-//    }
+    BlackJackServiceImpl cardService;
+
+    @Before
+    public void setUp(){
+        cardService = new BlackJackServiceImpl();
+    }
+
+    @Test
+    public void ACE_체크(){
+        Assertions.assertThat(cardService.isAce(CardNumberEntity.ACE)).isTrue();
+        Assertions.assertThat(cardService.isAce(CardNumberEntity.QUEEN)).isFalse();
+    }
 }

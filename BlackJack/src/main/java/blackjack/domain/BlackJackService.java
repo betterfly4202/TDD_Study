@@ -1,5 +1,7 @@
 package blackjack.domain;
 
+import blackjack.entity.CardNumberEntity;
+
 import javax.smartcardio.Card;
 
 /**
@@ -8,16 +10,16 @@ import javax.smartcardio.Card;
  */
 
 public interface BlackJackService {
-    public int isAce();
+    boolean isAce(CardNumberEntity cardNumber);
 
-    public boolean isBlackJack();
+    boolean isBlackJack(Card card);
 
-    public Card isHit();
+    boolean isHit(Card card);
 
-    public Card isStand();
+    boolean isStand(Card card);
 
-    public Card isBust();
+    boolean isBust(Card card);
 
-    public Card compareWithCard();
+    Card compareWithCard(Card card);
 
 }

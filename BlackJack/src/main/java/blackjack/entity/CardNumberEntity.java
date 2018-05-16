@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 
 public enum CardNumberEntity {
-    ACE("SELECT"),
+    ACE("ACE"),
     TWO("2"),
     THREE("3"),
     FOUR("4"),
@@ -31,5 +31,7 @@ public enum CardNumberEntity {
     public String getNumber() {
         return number;
     }
+
+
 
 }
