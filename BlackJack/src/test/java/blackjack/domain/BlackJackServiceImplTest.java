@@ -9,12 +9,12 @@ import org.junit.Test;
  * Github : http://github.com/betterfly88
  */
 
-public class CardServiceImplTest {
-//    CardServiceImpl cardService;
+public class BlackJackServiceImplTest {
+//    BlackJackServiceImpl cardService;
 //
 //    @Before
 //    public void setUp(){
-//        cardService = new CardServiceImpl();
+//        cardService = new BlackJackServiceImpl();
 //    }
 //
 //    @Test

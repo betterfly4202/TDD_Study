@@ -40,4 +40,13 @@ public class Player{
     public int getCosts(){
         return costs;
     }
+
+    private boolean countDealerCardPoint(List<Card> card){
+        //TODO : 딜러인 경우 처음 카드 2장의 합이 16점 이하이면 카드를 한장 더 뽑고,
+        // 17점 이상이면 random(50%)로 카드를 뽑음 > 뽑은 다음 또 뽑을지 계속 무한...
+        // >> 유저가 hit할떄마다 50% 확률로 뽑을지 말지를 따라가면 됨
+        boolean underSixteen = false;
+
+        return underSixteen;
+    }
 }
