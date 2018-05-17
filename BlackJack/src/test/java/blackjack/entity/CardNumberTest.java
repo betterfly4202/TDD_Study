@@ -28,4 +28,11 @@ public class CardNumberTest{
 
     }
 
+    @Test
+    public void isAce(){
+//        Assertions.assertThat(numberEntity.valueOf("ACE").getCardNumber()).isEqualTo(11);
+        System.out.println(CardNumberEntity.ACE.ordinal());
+        System.out.println(CardNumberEntity.ACE.getCardNumber());
+    }
+
 }

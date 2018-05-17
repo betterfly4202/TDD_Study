@@ -6,11 +6,11 @@ package blackjack.entity;
  */
 
 public enum CardNumberEntity {
-    ACE(1) {
-        public int isAce(boolean selected) {
-            return selected == true ? 11 : 1;
-        }
-    },
+    ACE(1)
+//    {public int isAce(boolean selected) {
+//            return selected == true ? 11 : 1;
+//        }}
+    ,
     TWO(2),
     THREE(3),
     FOUR(4),
@@ -27,11 +27,12 @@ public enum CardNumberEntity {
     final private int cardNumber;
 
     CardNumberEntity(int cardNumber) {
-
         this.cardNumber = cardNumber;
     }
 
     public int getCardNumber(){
         return cardNumber;
     }
+
+
 }
