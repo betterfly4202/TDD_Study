@@ -54,7 +54,6 @@ public class CSVFileReader {
                  * getRowMember[2] // 부속
                  * getRowMember[3] // 직책
              */
-
         }
 //        getMemberList.forEach(getMember ->
 //                getMember[0].split("|")
