@@ -54,4 +54,18 @@ public class PlayerTest {
         Assertions.assertThat(dealer.getCosts()).isNotNull();
 
     }
+
+    @Test
+    public void 유저_시작_카드계산(){
+        List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
+        int totalPoint = 0;
+
+        for(blackjack.entity.Card card : userCard){
+            totalPoint += card.cardNum.getCardNumber();
+        }
+        System.out.println(totalPoint);
+
+        int sum = userCard.stream().map(card -> card.cardNum.getCardNumber()).mapToInt(Integer::intValue).sum();
+        System.out.println(sum);
+    }
 }

@@ -13,13 +13,13 @@ public class Player{
     private int costs;
     private List<Card> userCardRepository;
 
-    Player(PlayerEntity player, int costs){
+    public Player(PlayerEntity player, int costs){
         userCardRepository = new ArrayList<>();
         this.player = player;
         this.costs = costs;
     }
 
-    Player(PlayerEntity player){
+    public Player(PlayerEntity player){
         userCardRepository = new ArrayList<>();
         this.player = player;
     }

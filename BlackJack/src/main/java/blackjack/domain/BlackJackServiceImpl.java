@@ -1,8 +1,10 @@
 package blackjack.domain;
 
+import blackjack.entity.Card;
+import blackjack.entity.CardDeck;
 import blackjack.entity.CardNumberEntity;
 
-import javax.smartcardio.Card;
+import java.util.List;
 
 /**
  * Created by betterFLY on 2018. 5. 13.
@@ -10,6 +12,12 @@ import javax.smartcardio.Card;
  */
 
 public class BlackJackServiceImpl implements BlackJackService {
+
+    @Override
+    public Card openCard(CardDeck cardDeck) {
+        return cardDeck.getCardEntity();
+    }
+
     @Override
     public boolean isAce(CardNumberEntity cardNumber){
         if(cardNumber.equals(CardNumberEntity.ACE)){
@@ -21,7 +29,10 @@ public class BlackJackServiceImpl implements BlackJackService {
     }
 
     @Override
-    public boolean isBlackJack(Card card) {
+    public boolean isBlackJack(int sumCardPoint) {
+        if(sumCardPoint == 21){
+            return true;
+        }
         return false;
     }
 
@@ -45,4 +56,17 @@ public class BlackJackServiceImpl implements BlackJackService {
         return null;
     }
 
+    @Override
+    public int sumCardPoint(List<Card> cardList) {
+//        int totalPoint = 0;
+//        for(Card card : cardList){
+//            totalPoint += card.cardNum.getCardNumber();
+//        }
+        int totalPoint = cardList.stream()
+                .map(card -> card.cardNum.getCardNumber())
+                .mapToInt(Integer::intValue)
+                .sum();
+
+        return totalPoint;
+    }
 }

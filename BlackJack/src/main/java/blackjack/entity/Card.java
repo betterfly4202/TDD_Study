@@ -6,7 +6,7 @@ package blackjack.entity;
  */
 
 
-class Card{
+public class Card{
     public CardShapeEntity cardShape;
     public CardNumberEntity cardNum;
 

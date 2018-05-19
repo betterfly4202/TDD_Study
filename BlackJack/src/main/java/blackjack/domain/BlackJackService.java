@@ -1,8 +1,11 @@
 package blackjack.domain;
 
+import blackjack.entity.CardDeck;
 import blackjack.entity.CardNumberEntity;
 
-import javax.smartcardio.Card;
+import blackjack.entity.Card;
+
+import java.util.List;
 
 /**
  * Created by betterFLY on 2018. 5. 13.
@@ -10,9 +13,11 @@ import javax.smartcardio.Card;
  */
 
 public interface BlackJackService {
+    Card openCard(CardDeck cardDeck);
+
     boolean isAce(CardNumberEntity cardNumber);
 
-    boolean isBlackJack(Card card);
+    boolean isBlackJack(int sumCardPoint);
 
     boolean isHit(Card card);
 
@@ -21,5 +26,7 @@ public interface BlackJackService {
     boolean isBust(Card card);
 
     Card compareWithCard(Card card);
+
+    int sumCardPoint(List<Card> cardList);
 
 }
