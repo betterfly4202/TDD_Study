@@ -13,19 +13,15 @@ import java.util.List;
  */
 
 public interface BlackJackService {
-    Card openCard(CardDeck cardDeck);
-
     boolean isAce(CardNumberEntity cardNumber);
 
     boolean isBlackJack(int sumCardPoint);
 
-    boolean isHit(Card card);
+    Card isHit(CardDeck cardDeck);
 
-    boolean isStand(Card card);
+    void isStand(List<Card> cardList);
 
-    boolean isBust(Card card);
-
-    Card compareWithCard(Card card);
+    boolean isBust(int sumPoint);
 
     int sumCardPoint(List<Card> cardList);
 

@@ -14,11 +14,6 @@ import java.util.List;
 public class BlackJackServiceImpl implements BlackJackService {
 
     @Override
-    public Card openCard(CardDeck cardDeck) {
-        return cardDeck.getCardEntity();
-    }
-
-    @Override
     public boolean isAce(CardNumberEntity cardNumber){
         if(cardNumber.equals(CardNumberEntity.ACE)){
 
@@ -37,23 +32,22 @@ public class BlackJackServiceImpl implements BlackJackService {
     }
 
     @Override
-    public boolean isHit(Card card) {
-        return false;
+    public Card isHit(CardDeck cardDeck) {
+        return cardDeck.getCardEntity();
     }
 
     @Override
-    public boolean isStand(Card card) {
-        return false;
+    public void isStand(List<Card> cardList) {
+        sumCardPoint(cardList);
     }
 
     @Override
-    public boolean isBust(Card card) {
-        return false;
-    }
+    public boolean isBust(int sumPoint) {
+        if(sumPoint > 21){
+            return true;
+        }
 
-    @Override
-    public Card compareWithCard(Card card) {
-        return null;
+        return false;
     }
 
     @Override
