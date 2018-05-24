@@ -16,10 +16,8 @@ public class BlackJackServiceImpl implements BlackJackService {
     @Override
     public boolean isAce(CardNumberEntity cardNumber){
         if(cardNumber.equals(CardNumberEntity.ACE)){
-
             return true;
         }
-
         return false;
     }
 

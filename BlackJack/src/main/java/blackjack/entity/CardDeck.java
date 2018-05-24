@@ -9,9 +9,6 @@ import java.util.*;
 
 public class CardDeck extends Card{
     private Stack<Card> cardDeck = new Stack<>();
-    /**
-     *
-     */
 //    private HashSet<Card> cardSet;
     private List<Card> cardSet;
 
@@ -26,6 +23,10 @@ public class CardDeck extends Card{
 //            }
 //        }
 //    }
+
+    public CardDeck(){
+        this.setCardDeckList();
+    }
 
     private List<Card> mixedCardDeck(){
 //        cardSet = new HashSet<>();

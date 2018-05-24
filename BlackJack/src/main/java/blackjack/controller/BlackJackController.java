@@ -1,9 +1,14 @@
 package blackjack.controller;
 
+import blackjack.entity.Card;
+import blackjack.entity.CardDeck;
+import blackjack.entity.Player;
+import blackjack.entity.PlayerEntity;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
@@ -18,9 +23,10 @@ public class BlackJackController {
     public static void main(String [] args){
 
 //        staticFiles.location("/static");
-        get("/input", (req, res) ->{
+        get("/black-jack", (req, res) ->{
+
             Map<String, Object> model = new HashMap<>();
-            return render(model, "form.html");
+            return render(model, "main.html");
         });
 
         post("/result",(req, res) ->{
@@ -34,5 +40,18 @@ public class BlackJackController {
 
     public static String render(Map<String, Object> model, String templatePath) {
         return new HandlebarsTemplateEngine().render(new ModelAndView(model, templatePath));
+    }
+
+    public static void init(){
+        CardDeck cardDeck = new CardDeck();
+        cardDeck.setCardDeckList();
+
+        Player dealer = new Player(PlayerEntity.DEALER);
+        Player player = new Player(PlayerEntity.USER, 2000);
+
+        List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
+        List<Card> dealerCard = dealer.getUserCardDeckList(cardDeck.getCardEntity());
+
+
     }
 }

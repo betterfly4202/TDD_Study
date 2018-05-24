@@ -47,4 +47,9 @@ public class BlackJackServiceImplTest {
         System.out.println(card.cardNum);
         System.out.println(cardDeck.getCardDeckList().size());
     }
+
+    @Test
+    public void 게임결과(){
+
+    }
 }

@@ -56,6 +56,16 @@ public class PlayerTest {
     }
 
     @Test
+    public void 유저_카드확인(){
+        Player p1 = new Player(PlayerEntity.DEALER);
+        for (Card c : p1.getAllCardDeck()) {
+            System.out.println(c.cardShape);
+        }
+
+        System.out.println(p1.getAllCardDeck().size());
+    }
+
+    @Test
     public void 유저_시작_카드계산(){
         List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
         int totalPoint = 0;

@@ -30,6 +30,12 @@ public class CardTest {
         }
     }
 
+    @Test
+    public void 생성자_덱_생성확인(){
+        CardDeck temp = new CardDeck();
+        Assertions.assertThat(temp.getCardDeckList().size()).isEqualTo(52);
+    }
+
     public int isAce(String selectAce){
         int aceNum = selectAce == "" ? 1 : 10;
 

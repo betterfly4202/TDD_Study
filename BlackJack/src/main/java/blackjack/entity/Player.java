@@ -12,14 +12,17 @@ public class Player{
     private PlayerEntity player;
     private int costs;
     private List<Card> userCardRepository;
+    private CardDeck cardDeck;
 
     public Player(PlayerEntity player, int costs){
+        this.cardDeck = new CardDeck();
         userCardRepository = new ArrayList<>();
         this.player = player;
         this.costs = costs;
     }
 
     public Player(PlayerEntity player){
+        this.cardDeck = new CardDeck();
         userCardRepository = new ArrayList<>();
         this.player = player;
     }
@@ -33,6 +36,10 @@ public class Player{
     public List<Card> getUserCardDeckList(Card card){
         defaultUserCardDeck(card);
         return userCardRepository;
+    }
+
+    public List<Card> getAllCardDeck(){
+        return cardDeck.getCardDeckList();
     }
 
     public int getCosts(){
