@@ -24,15 +24,15 @@ public class BlackJackController {
 
 //        staticFiles.location("/static");
         get("/black-jack", (req, res) ->{
-
             Map<String, Object> model = new HashMap<>();
+            model.put("playerDeck", playerCardDeck());
+            model.put("dealerDeck", dealerCardDeck());
+
             return render(model, "main.html");
         });
 
         post("/result",(req, res) ->{
             Map<String, Object> model = new HashMap<>();
-            model.put("inputRound", req.queryParams("inputRound"));
-            model.put("inputCar", req.queryParams("inputCar"));
 
             return render(model, "result.html");
         });
@@ -42,16 +42,21 @@ public class BlackJackController {
         return new HandlebarsTemplateEngine().render(new ModelAndView(model, templatePath));
     }
 
-    public static void init(){
+    public static List<Card> playerCardDeck(){
         CardDeck cardDeck = new CardDeck();
         cardDeck.setCardDeckList();
-
-        Player dealer = new Player(PlayerEntity.DEALER);
         Player player = new Player(PlayerEntity.USER, 2000);
-
         List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
+
+        return userCard;
+    }
+
+    public static List<Card> dealerCardDeck(){
+        CardDeck cardDeck = new CardDeck();
+        cardDeck.setCardDeckList();
+        Player dealer = new Player(PlayerEntity.DEALER);
         List<Card> dealerCard = dealer.getUserCardDeckList(cardDeck.getCardEntity());
 
-
+        return dealerCard;
     }
 }

@@ -6,9 +6,20 @@
 </head>
 <body>
     <form method="post" action="http://localhost:4567/result">
-        Player : <input type="text" name="inputRound">
-        배팅액 : {{userCosts}}
-        <input type="submit" value="레이싱!!"/>
+        <h2>Player</h2>
+        {{#playerDeck}}
+             {{cardShape}}
+             {{cardNum}}
+        {{/playerDeck}}
+
+        <h2>Dealer</h2>
+        {{#dealerDeck}}
+            Card Shape : {{cardShape}}
+            Card Number : {{cardNum}}
+        {{/dealerDeck}}
+
+        <input type="submit" value="hit"/>
+
     </form>
 </body>
 </html>
