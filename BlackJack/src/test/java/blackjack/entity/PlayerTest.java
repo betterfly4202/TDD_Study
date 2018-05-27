@@ -34,12 +34,12 @@ public class PlayerTest {
 
     @Test
     public void 유저_카드덱_기본(){
-        player.getUserCardDeckList(cardDeck.getCardEntity());
+        player.getUserCardDeckList();
     }
 
     @Test
     public void 유저_카드덱_가져오기(){
-        List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
+        List<Card> userCard = player.getUserCardDeckList();
         assertThat(userCard.size()).isEqualTo(2);
         assertThat(userCard.get(0)).extracting("cardShape").containsAnyOf(CLUB, HEART, DIAMOND, SPADE);
         assertThat(userCard.get(1)).extracting("cardShape").containsAnyOf(CardShapeEntity.values());
@@ -67,7 +67,7 @@ public class PlayerTest {
 
     @Test
     public void 유저_시작_카드계산(){
-        List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
+        List<Card> userCard = player.getUserCardDeckList();
         int totalPoint = 0;
 
         for(blackjack.entity.Card card : userCard){

@@ -1,0 +1,4 @@
+
+function zz(){
+    alert("zzz");
+}

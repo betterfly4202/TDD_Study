@@ -2,6 +2,7 @@ package blackjack.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by betterFLY on 2018. 5. 12.
@@ -27,14 +28,11 @@ public class Player{
         this.player = player;
     }
 
-    private void defaultUserCardDeck(Card card){
+    //TODO: stack에서 뽑은 카드를 usercardRepository에 넣어야 함.. 이걸 list로 둘 건지, 그냥 stack으로 바로 쓸건지 고민해보면 될듯...
+    public List<Card> getUserCardDeckList(){
         for(int i=0; i<2; i++){
-            userCardRepository.add(card);
+            userCardRepository.add(cardDeck.getCardEntity());
         }
-    }
-
-    public List<Card> getUserCardDeckList(Card card){
-        defaultUserCardDeck(card);
         return userCardRepository;
     }
 

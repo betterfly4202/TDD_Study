@@ -33,7 +33,7 @@ public class BlackJackServiceImplTest {
 
     @Test
     public void 보유카드_계산기(){
-        List<Card> userCard = player.getUserCardDeckList(cardDeck.getCardEntity());
+        List<Card> userCard = player.getUserCardDeckList();
         int totalCardPoint = cardService.sumCardPoint(userCard);
         Assertions.assertThat(totalCardPoint).isGreaterThan(1);
         System.out.println(totalCardPoint);

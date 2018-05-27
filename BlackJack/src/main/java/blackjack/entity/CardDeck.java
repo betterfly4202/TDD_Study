@@ -44,10 +44,6 @@ public class CardDeck extends Card{
         return cardSet;
     }
 
-    private void clearCardDeck(){
-        cardSet.removeAll(cardSet);
-    }
-
     public void setCardDeckList(){
         mixedCardDeck();
 
