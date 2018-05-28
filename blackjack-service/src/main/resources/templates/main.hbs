@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Jack</title>
+</head>
+
+<body>
+    <form method="post" action="http://localhost:4567/result">
+        <h2>Player</h2>
+        {{#each playerDeck}}
+            {{playerDeck.cardShape}} <br/>
+            {{playerDeck.cardNum}}
+        {{/each}}
+
+        <h2>Dealer</h2>
+        {{#dealerDeck}}
+            Card Shape : {{dealerDeck.cardShape}} <br/>
+            Card Number : {{cardNum}}
+        {{/dealerDeck}}
+
+        <input type="submit" value="hit"/>
+        <button type="button" onclick="zz()">zzz</button>
+    </form>
+
+    <!--<script src="../static/js/main.js"></script>-->
+</body>
+</html>
+
