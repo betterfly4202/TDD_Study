@@ -8,16 +8,17 @@
 <body>
     <form method="post" action="http://localhost:4567/result">
         <h2>Player</h2>
-        {{#each playerDeck}}
-            {{playerDeck.cardShape}} <br/>
-            {{playerDeck.cardNum}}
+        {{#each player}}
+            {{cardShape}} <br/>
+            {{cardNum}}
         {{/each}}
 
         <h2>Dealer</h2>
-        {{#dealerDeck}}
-            Card Shape : {{dealerDeck.cardShape}} <br/>
+        {{#each dealer}}
+            Card Shape : {{cardShape}} <br/>
             Card Number : {{cardNum}}
-        {{/dealerDeck}}
+        {{/each}}
+
 
         <input type="submit" value="hit"/>
         <button type="button" onclick="zz()">zzz</button>
