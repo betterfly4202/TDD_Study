@@ -4,6 +4,7 @@ import com.blackjack.entity.Card;
 import com.blackjack.entity.CardDeck;
 import com.blackjack.entity.Player;
 import com.blackjack.entity.PlayerEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,10 +16,10 @@ import java.util.List;
  * Github : http://github.com/betterfly88
  */
 
-@RestController
+@Controller
 public class BootController {
 
-    @GetMapping("/main")
+    @GetMapping("/index")
     public String index(Model model){
         model.addAttribute("player",playerCardDeck());
         model.addAttribute("dealer",dealerCardDeck());
