@@ -1,8 +1,7 @@
 package blackjack.domain;
 
-import blackjack.entity.*;
-import com.blackjack.domain.BlackJackServiceImpl;
-import com.blackjack.entity.*;
+import com.blackjack.webservice.domain.BlackJackServiceImpl;
+import com.blackjack.webservice.entity.*;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;

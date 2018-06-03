@@ -1,10 +1,9 @@
 package blackjack.entity;
 
-import com.blackjack.entity.CardNumberEntity;
+import com.blackjack.webservice.entity.CardNumberEntity;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
-import static org.assertj.core.api.Assertions.*;
 
 /**
  * Created by betterFLY on 2018. 5. 13.

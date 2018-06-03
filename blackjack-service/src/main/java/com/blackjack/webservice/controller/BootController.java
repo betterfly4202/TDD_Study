@@ -1,9 +1,9 @@
-package com.blackjack.controller;
+package com.blackjack.webservice.controller;
 
-import com.blackjack.entity.Card;
-import com.blackjack.entity.CardDeck;
-import com.blackjack.entity.Player;
-import com.blackjack.entity.PlayerEntity;
+import com.blackjack.webservice.entity.Card;
+import com.blackjack.webservice.entity.CardDeck;
+import com.blackjack.webservice.entity.Player;
+import com.blackjack.webservice.entity.PlayerEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +17,7 @@ import java.util.List;
  */
 
 @Controller
+@RestController
 public class BootController {
 
     @GetMapping("/index")
@@ -24,6 +25,11 @@ public class BootController {
         model.addAttribute("player",playerCardDeck());
         model.addAttribute("dealer",dealerCardDeck());
         return "main";
+    }
+
+    @GetMapping("/")
+    public String main(){
+        return "result";
     }
 
 

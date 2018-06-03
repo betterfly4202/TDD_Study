@@ -1,11 +1,8 @@
 package blackjack.entity;
 
-import static org.assertj.core.api.Assertions.*;
-
-import com.blackjack.entity.Card;
-import com.blackjack.entity.CardDeck;
+import com.blackjack.webservice.entity.Card;
+import com.blackjack.webservice.entity.CardDeck;
 import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 

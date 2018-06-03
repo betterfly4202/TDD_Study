@@ -1,4 +1,4 @@
-package com.blackjack.entity;
+package com.blackjack.webservice.entity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package com.blackjack.domain;
+package com.blackjack.webservice.domain;
 
 
-import com.blackjack.entity.Card;
-import com.blackjack.entity.CardDeck;
-import com.blackjack.entity.CardNumberEntity;
+import com.blackjack.webservice.entity.Card;
+import com.blackjack.webservice.entity.CardDeck;
+import com.blackjack.webservice.entity.CardNumberEntity;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public interface BlackJackService {
 
     boolean isBlackJack(int sumCardPoint);
 
-    com.blackjack.entity.Card isHit(CardDeck cardDeck);
+    com.blackjack.webservice.entity.Card isHit(CardDeck cardDeck);
 
     void isStand(List<Card> cardList);
 

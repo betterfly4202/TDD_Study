@@ -1,4 +1,4 @@
-package com.blackjack.common;
+package com.blackjack.webservice.common;
 
 import java.util.Random;
 

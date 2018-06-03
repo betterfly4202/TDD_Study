@@ -1,4 +1,4 @@
-package com.blackjack.entity;
+package com.blackjack.webservice.entity;
 
 /**
  * Created by betterFLY on 2018. 5. 12.

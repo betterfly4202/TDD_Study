@@ -1,9 +1,9 @@
-package com.blackjack.domain;
+package com.blackjack.webservice.domain;
 
 
-import com.blackjack.entity.Card;
-import com.blackjack.entity.CardDeck;
-import com.blackjack.entity.CardNumberEntity;
+import com.blackjack.webservice.entity.Card;
+import com.blackjack.webservice.entity.CardDeck;
+import com.blackjack.webservice.entity.CardNumberEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

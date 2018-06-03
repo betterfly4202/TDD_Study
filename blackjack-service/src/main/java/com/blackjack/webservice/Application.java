@@ -1,4 +1,4 @@
-package com.blackjack;
+package com.blackjack.webservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

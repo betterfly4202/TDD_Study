@@ -1,16 +1,14 @@
 package blackjack.entity;
 
-import com.blackjack.entity.*;
+import com.blackjack.webservice.entity.*;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static com.blackjack.entity.CardShapeEntity.*;
+import static com.blackjack.webservice.entity.CardShapeEntity.*;
 import static org.assertj.core.api.Assertions.*;
-import org.junit.Test;
 
 /**
  * Created by betterFLY on 2018. 5. 13.
