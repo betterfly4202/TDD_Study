@@ -20,8 +20,8 @@ import java.util.List;
 @RestController
 public class BootController {
 
-    @GetMapping("/index")
-    public String index(Model model){
+    @GetMapping("/main")
+    public String main(Model model){
         model.addAttribute("player",playerCardDeck());
         model.addAttribute("dealer",dealerCardDeck());
         return "main";
@@ -31,7 +31,6 @@ public class BootController {
     public String main(){
         return "result";
     }
-
 
     public List<Card> playerCardDeck(){
         CardDeck cardDeck = new CardDeck();
