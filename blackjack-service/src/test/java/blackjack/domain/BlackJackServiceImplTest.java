@@ -43,7 +43,7 @@ public class BlackJackServiceImplTest {
     @Test
     public void 카드_오픈() {
         Card card = cardService.isHit(cardDeck);
-        Assertions.assertThat(card.cardShape).extracting(cardShapeEntity -> card.cardNum);
+//        Assertions.assertThat(card.cardShape).extracting(cardShapeEntity -> card.cardNum);
         System.out.println(card.cardShape);
         System.out.println(card.cardNum);
         System.out.println(cardDeck.getCardDeckList().size());

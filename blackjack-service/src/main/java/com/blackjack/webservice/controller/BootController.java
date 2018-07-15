@@ -17,7 +17,6 @@ import java.util.List;
  */
 
 @Controller
-@RestController
 public class BootController {
 
     @GetMapping("/main")
