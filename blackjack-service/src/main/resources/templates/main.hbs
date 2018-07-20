@@ -3,14 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
     <title>Black Jack</title>
 </head>
 
 <body>
     <form method="post" action="http://localhost:4567/result">
-        <h2>Player</h2>
+        <h2>Player 22 zzz</h2>
         {{#each player}}
-            {{cardShape}} <br/>
+            {{player.cardShape}} <br/>
             {{cardNum}}
         {{/each}}
 
@@ -21,11 +25,29 @@
         {{/each}}
 
 
+        <table>
+            <thead>
+            <tr>
+                <th>게시글번호</th>
+                <th>제목</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            {{#each dealer}}
+                <tr>
+                    <td>{{cardShape}}</td>
+                    <td>{{cardNum}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+
+
         <input type="submit" value="hit"/>
         <button type="button" onclick="zz()">zzz</button>
     </form>
 
-    <!--<script src="../static/js/main.js"></script>-->
+    <script src="/js/main.js"></script>
 </body>
 </html>
 
