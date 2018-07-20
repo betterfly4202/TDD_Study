@@ -28,7 +28,7 @@ public class BootController {
 
     @GetMapping("/")
     public String main(){
-        return "result";
+        return "raesult";
     }
 
     public List<Card> playerCardDeck(){
