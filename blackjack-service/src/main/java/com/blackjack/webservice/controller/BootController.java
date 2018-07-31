@@ -23,6 +23,8 @@ public class BootController {
     public String main(Model model){
         model.addAttribute("player",playerCardDeck());
         model.addAttribute("dealer",dealerCardDeck());
+
+        model.addAttribute("test","2a2a2a");
         return "main";
     }
 

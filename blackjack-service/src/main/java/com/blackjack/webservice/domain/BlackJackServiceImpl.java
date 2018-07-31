@@ -26,7 +26,7 @@ public class BlackJackServiceImpl implements BlackJackService {
 
     @Override
     public boolean isBlackJack(int sumCardPoint) {
-        if(sumCardPoint == 21){
+        if(sumCardPoint  == 21){
             return true;
         }
         return false;
