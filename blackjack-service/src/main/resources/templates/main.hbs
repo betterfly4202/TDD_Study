@@ -12,18 +12,17 @@
 
 <body>
     <form method="post" action="http://localhost:4567/result">
-        <h2>Player 22 zzz</h2>
-        {{#each player}}
-            {{player.cardShape}} <br/>
-            {{cardNum}}
-        {{/each}}
+        <h2>Player</h2>
+        {{#player}}
+            {{cardShape.name}} <br/>
+            {{cardNum.name}}
+        {{/player}}
 
         <h2>Dealer</h2>
         {{#each dealer}}
-            Card Shape : {{cardShape}} <br/>
-            Card Number : {{cardNum}}
+            Card Shape : {{cardShape.name}} <br/>
+            Card Number : {{cardNum.name}}
         {{/each}}
-
 
         <table>
             <thead>
