@@ -24,7 +24,7 @@ public class BootController {
         model.addAttribute("player",playerCardDeck());
         model.addAttribute("dealer",dealerCardDeck());
 
-        model.addAttribute("test","2a2a2a");
+        model.addAttribute("test","22222aa");
         return "main";
     }
 
