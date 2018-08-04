@@ -20,8 +20,13 @@
 
         <h2>Dealer</h2>
         {{#each dealer}}
-            Card Shape : {{dealer.cardShape.name}} <br/>
-            Card Name : {{@key}} <br/>
+            {{#each cardShape}}
+                Card Shape : {{shape}} <br/>
+            {{/each}}
+
+            {{#each cardNumber}}
+                Card Name : {{cardNumber}} <br/>
+            {{/each}}
         {{/each}}
 
         <table>
@@ -34,7 +39,7 @@
             <tbody id="tbody">
             {{#each dealer}}
                 <tr>
-                    <td>{{cardShape}}</td>
+                    <td>{{cardShape.shape}}</td>
                     <td>{{cardNum}}</td>
                 </tr>
             {{/each}}

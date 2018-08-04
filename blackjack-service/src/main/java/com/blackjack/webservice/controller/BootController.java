@@ -21,18 +21,18 @@ public class BootController {
 
     @GetMapping("/main")
     public String main(Model model){
-        model.addAttribute("player",playerCardDeck());
-        model.addAttribute("dealer",dealerCardDeck());
+//        model.addAttribute("player",playerCardDeck());
+//        model.addAttribute("dealer",dealerCardDeck());
 
-        model.addAttribute("test","22222aa");
         return "main";
     }
 
     @GetMapping("/")
     public String main(){
-        return "raesult";
+        return "result";
     }
 
+    @GetMapping("/cardDeck/user")
     public List<Card> playerCardDeck(){
         CardDeck cardDeck = new CardDeck();
         cardDeck.setCardDeckList();
@@ -42,6 +42,7 @@ public class BootController {
         return userCard;
     }
 
+    @GetMapping("/cardDeck/dealer")
     public List<Card> dealerCardDeck(){
         CardDeck cardDeck = new CardDeck();
         cardDeck.setCardDeckList();

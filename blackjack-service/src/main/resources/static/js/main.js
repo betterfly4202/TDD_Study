@@ -11,6 +11,7 @@ var main = {
             _this.save();
         });
     },
+
     save : function () {
         var data = {
             title: $('#title').val(),
@@ -30,8 +31,20 @@ var main = {
         }).fail(function (error) {
             alert(error);
         });
+    },
+
+    getData : function(){
+        $.ajax({
+            type:'GET',
+            url : 'cardDeck/user'
+        }).done(function(item){
+            console.log('item',item);
+        }).fail(function (err){
+            console.log('err',err);
+        })
     }
 
 };
 
 main.init();
+main.getData();
