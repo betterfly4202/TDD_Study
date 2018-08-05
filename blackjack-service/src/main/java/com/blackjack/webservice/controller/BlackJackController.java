@@ -7,6 +7,8 @@ import com.blackjack.webservice.entity.PlayerEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,13 +19,11 @@ import java.util.List;
  */
 
 @Controller
+@RequestMapping("/api")
 public class BootController {
 
     @GetMapping("/main")
     public String main(Model model){
-//        model.addAttribute("player",playerCardDeck());
-//        model.addAttribute("dealer",dealerCardDeck());
-
         return "main";
     }
 
@@ -33,6 +33,7 @@ public class BootController {
     }
 
     @GetMapping("/cardDeck/user")
+    @ResponseBody
     public List<Card> playerCardDeck(){
         CardDeck cardDeck = new CardDeck();
         cardDeck.setCardDeckList();
@@ -43,6 +44,7 @@ public class BootController {
     }
 
     @GetMapping("/cardDeck/dealer")
+    @ResponseBody
     public List<Card> dealerCardDeck(){
         CardDeck cardDeck = new CardDeck();
         cardDeck.setCardDeckList();
