@@ -6,11 +6,7 @@ package com.blackjack.webservice.entity;
  */
 
 public enum CardNumberEntity {
-    ACE(1)
-//    {public int isAce(boolean selected) {
-//            return selected == true ? 11 : 1;
-//        }}
-    ,
+    ACE(1),
     TWO(2),
     THREE(3),
     FOUR(4),

@@ -1,5 +1,6 @@
 package com.blackjack.webservice.controller;
 
+import com.blackjack.webservice.domain.BlackJackService;
 import com.blackjack.webservice.entity.Card;
 import com.blackjack.webservice.entity.CardDeck;
 import com.blackjack.webservice.entity.Player;
@@ -20,25 +21,17 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/api")
-public class BootController {
+public class BlackJackController {
+    private List<Card> userCard;
+    private List<Card> dealerCard;
 
-    @GetMapping("/main")
-    public String main(Model model){
-        return "main";
-    }
-
-    @GetMapping("/")
-    public String main(){
-        return "result";
-    }
+    private BlackJackService service;
 
     @GetMapping("/cardDeck/user")
     @ResponseBody
     public List<Card> playerCardDeck(){
-        CardDeck cardDeck = new CardDeck();
-        cardDeck.setCardDeckList();
         Player player = new Player(PlayerEntity.USER, 2000);
-        List<Card> userCard = player.getUserCardDeckList();
+        userCard = player.getUserCardDeckList();
 
         return userCard;
     }
@@ -49,8 +42,14 @@ public class BootController {
         CardDeck cardDeck = new CardDeck();
         cardDeck.setCardDeckList();
         Player dealer = new Player(PlayerEntity.DEALER);
-        List<Card> dealerCard = dealer.getUserCardDeckList();
+        dealerCard = dealer.getUserCardDeckList();
 
         return dealerCard;
     }
+
+//    @GetMapping("/fetch/userCard")
+//    public Card fetchUserCard(){
+//        Card fetchOneCard = new Card();
+//        service.isHit()
+//    }
 }
