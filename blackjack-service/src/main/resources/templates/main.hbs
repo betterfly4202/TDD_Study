@@ -11,47 +11,56 @@
 </head>
 
 <body>
-    <form method="post" action="http://localhost:4567/result">
-        <h2>Player</h2>
-        {{player.[0].cardShape.name}}
-
-
-        {{test}}
-
-        <h2>Dealer</h2>
-        {{#each dealer}}
-            {{#each cardShape}}
-                Card Shape : {{shape}} <br/>
-            {{/each}}
-
-            {{#each cardNumber}}
-                Card Name : {{cardNumber}} <br/>
-            {{/each}}
-        {{/each}}
-
-        <table>
-            <thead>
-            <tr>
-                <th>게시글번호</th>
-                <th>제목</th>
-            </tr>
-            </thead>
-            <tbody id="tbody">
-            {{#each dealer}}
+    <div id="card-main-template">
+        <form method="post" action="http://localhost:4567/result">
+            <table>
+                <thead>
                 <tr>
-                    <td>{{cardShape.shape}}</td>
-                    <td>{{cardNum}}</td>
+                    <th>게시글번호</th>
+                    <th>제목</th>
                 </tr>
-            {{/each}}
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="card-template">
+                {{#result}}
+                    {{cardShape}}
+                {{/result}}
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
 
 
-        <input type="submit" value="hit"/>
-        <button type="button" onclick="zz()">zzz</button>
-    </form>
+            <input type="submit" value="hit"/>
+            <button type="button" onclick="zz()">zzz</button>
+        </form>
+    </div>
 
     <script src="/js/main.js"></script>
+
+
+
+
+    <script id="entry-template" type="text/x-handlebars-template">
+        <table>
+            <thead>
+            <th>이름</th>
+            <th>아이디</th>
+            <th>메일주소</th>
+            </thead>
+            <tbody>
+            {{#users}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{id}}</td>
+                    <td><a href="mailto:{{email}}">{{email}}</a></td>
+                </tr>
+            {{/users}}
+            </tbody>
+        </table>
+    </script>
+
+
 </body>
 </html>
 

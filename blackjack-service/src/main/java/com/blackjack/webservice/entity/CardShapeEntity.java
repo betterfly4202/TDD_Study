@@ -6,10 +6,10 @@ package com.blackjack.webservice.entity;
  */
 
 public enum CardShapeEntity {
-    SPADE("♠"),
-    HEART("♥"),
-    DIAMOND("♦"),
-    CLUB("♣");
+    SPADES("♠"),
+    HEARTS("♥"),
+    DIAMONDS("♦"),
+    CLUBS("♣");
 
     final private String shape;
 
