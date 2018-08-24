@@ -16,6 +16,8 @@ scp.sh
 *.iws
 *.iml
 *.ipr
+HttpServer.java
+RequestProcessor.java
 
 ### NetBeans ###
 nbproject/private/
