@@ -14,6 +14,7 @@ public class RequestProcessor implements Runnable {
     private File rootDirectory;
     private String indexFileName = "index.html";
     private Socket connection;
+    private final static String basePath = "src/main/webapp/web";
 
     public RequestProcessor(File rootDirectory, String indexFileName, Socket connection) {
         if (rootDirectory.isFile()) {
@@ -83,18 +84,22 @@ public class RequestProcessor implements Runnable {
                     raw.flush();
                 } else {
                     // can't find the file
-                    String body = new StringBuilder("<HTML>\r\n")
-                            .append("<HEAD><TITLE>File Not Found</TITLE>\r\n")
-                            .append("</HEAD>\r\n")
-                            .append("<BODY>")
-                            .append("<H1>HTTP Error 404: File Not Found</H1>\r\n")
-                            .append("</BODY></HTML>\r\n")
-                            .toString();
-                    if (version.startsWith("HTTP/")) { // send a MIME header
-                        sendHeader(out, "HTTP/1.0 404 File Not Found", "text/html; charset=utf-8", body.length());
-                    }
-                    out.write(body);
-                    out.flush();
+
+//                    String body = new StringBuilder("<HTML>\r\n")
+//                            .append("<HEAD><TITLE>File Not Found</TITLE>\r\n")
+//                            .append("</HEAD>\r\n")
+//                            .append("<BODY>")
+//                            .append("<H1>HTTP Error 404: File Not Found</H1>\r\n")
+//                            .append("</BODY></HTML>\r\n")
+//                            .toString();
+//                    if (version.startsWith("HTTP/")) { // send a MIME header
+//                        sendHeader(out, "HTTP/1.0 404 File Not Found", "text/html; charset=utf-8", body.length());
+//                    }
+//                    out.write(body);
+//                    out.flush();
+
+//                    FileReader f = readFile(basePath+"/err/404.html");
+                    outputStream(basePath+"/err/404.html");
                 }
             } else {
                 // method does not equal "GET"
@@ -128,5 +133,48 @@ public class RequestProcessor implements Runnable {
         out.write("Content-length: " + length + "\r\n");
         out.write("Content-type: " + contentType + "\r\n\r\n");
         out.flush();
+    }
+
+
+    public FileReader readFile(String filePath){
+        FileReader fReader = null;
+        try{
+            fReader= new FileReader(filePath);
+
+            int tempInteger;
+            while ((tempInteger = fReader.read()) != -1) {
+                System.out.print((char) tempInteger);
+            }
+            fReader.close();
+        }catch (FileNotFoundException fn){
+            fn.printStackTrace();
+        }catch (IOException io){
+            io.printStackTrace();
+        }
+
+        return fReader;
+    }
+
+
+    public void outputStream(String filePath){
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        try{
+            fis= new FileInputStream(filePath);
+            fos= new FileOutputStream(filePath);
+
+            int tempInteger;
+            while ((tempInteger = fis.read()) != -1) {
+                fos.write(tempInteger);
+            }
+            fos.flush();
+        }catch (FileNotFoundException fn){
+            fn.printStackTrace();
+        }catch (IOException io){
+            io.printStackTrace();
+        }finally {
+            if(fis != null) try{fis.close();}catch(IOException e){}
+            if(fos != null) try{fos.close();}catch(IOException e){}
+        }
     }
 }
