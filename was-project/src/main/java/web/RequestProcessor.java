@@ -1,5 +1,7 @@
 package web;
 
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+
 import java.io.*;
 import java.net.Socket;
 import java.net.URLConnection;
@@ -97,8 +99,10 @@ public class RequestProcessor implements Runnable {
 //                    }
 //                    out.write(body);
 //                    out.flush();
-
 //                    FileReader f = readFile(basePath+"/err/404.html");
+
+                    // TODO: FileOutputStream 으로 파일 읽은 후 스트림해주면됨(flush)
+                    // 지금 스트림은 파일 내용이 삭제됨
                     outputStream(basePath+"/err/404.html");
                 }
             } else {
@@ -151,30 +155,33 @@ public class RequestProcessor implements Runnable {
         }catch (IOException io){
             io.printStackTrace();
         }
-
         return fReader;
     }
 
 
     public void outputStream(String filePath){
         FileInputStream fis = null;
-        FileOutputStream fos = null;
         try{
-            fis= new FileInputStream(filePath);
-            fos= new FileOutputStream(filePath);
+            File file = new File(filePath);
+            fis= new FileInputStream(file);
 
-            int tempInteger;
-            while ((tempInteger = fis.read()) != -1) {
-                fos.write(tempInteger);
-            }
-            fos.flush();
+            OutputStream raw = new BufferedOutputStream(connection.getOutputStream());
+            Writer out = new OutputStreamWriter(raw);
+
+            String result = setReadBuffer(file);
+            out.write(result);
+            out.flush();
+            fis.close();
         }catch (FileNotFoundException fn){
             fn.printStackTrace();
         }catch (IOException io){
             io.printStackTrace();
-        }finally {
-            if(fis != null) try{fis.close();}catch(IOException e){}
-            if(fos != null) try{fos.close();}catch(IOException e){}
         }
     }
+
+    public String setReadBuffer(File file) throws IOException{
+        byte[] readBuffer = Files.readAllBytes(file.toPath());
+        return new String(readBuffer);
+    }
+
 }
