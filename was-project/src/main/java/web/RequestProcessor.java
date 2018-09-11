@@ -100,9 +100,6 @@ public class RequestProcessor implements Runnable {
 //                    out.write(body);
 //                    out.flush();
 //                    FileReader f = readFile(basePath+"/err/404.html");
-
-                    // TODO: FileOutputStream 으로 파일 읽은 후 스트림해주면됨(flush)
-                    // 지금 스트림은 파일 내용이 삭제됨
                     outputStream(basePath+"/err/404.html");
                 }
             } else {
@@ -165,7 +162,8 @@ public class RequestProcessor implements Runnable {
             File file = new File(filePath);
             fis= new FileInputStream(file);
 
-            OutputStream raw = new BufferedOutputStream(connection.getOutputStream());
+//            OutputStream raw = new BufferedOutputStream(connection.getOutputStream());
+            Reader inputStream = new InputStreamReader(new BufferedInputStream(connection.getInputStream()), "UTF-8");
             Writer out = new OutputStreamWriter(raw);
 
             String result = setReadBuffer(file);
