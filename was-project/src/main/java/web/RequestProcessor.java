@@ -100,7 +100,7 @@ public class RequestProcessor implements Runnable {
 //                    out.write(body);
 //                    out.flush();
 //                    FileReader f = readFile(basePath+"/err/404.html");
-                    outputStream(basePath+"/err/404.html");
+                    outputStream(basePath+"/err/404.html", get);
                 }
             } else {
                 // method does not equal "GET"
@@ -156,17 +156,28 @@ public class RequestProcessor implements Runnable {
     }
 
 
-    public void outputStream(String filePath){
+    public void outputStream(String filePath, String requestHeader){
         FileInputStream fis = null;
         try{
             File file = new File(filePath);
             fis= new FileInputStream(file);
 
-//            OutputStream raw = new BufferedOutputStream(connection.getOutputStream());
+            OutputStream raw = new BufferedOutputStream(connection.getOutputStream());
             Reader inputStream = new InputStreamReader(new BufferedInputStream(connection.getInputStream()), "UTF-8");
             Writer out = new OutputStreamWriter(raw);
 
             String result = setReadBuffer(file);
+            String[] tokens = requestHeader.split("\\s+");
+            String method = tokens[0];
+            String version = "";
+            if (tokens.length > 2) {
+                version = tokens[2];
+            }
+            String contentType =
+                    URLConnection.getFileNameMap().getContentTypeFor(filePath);
+            if (version.startsWith("HTTP/")) { // send a MIME header
+                sendHeader(out, "HTTP/1.0 200 OK", contentType, result.length());
+            }
             out.write(result);
             out.flush();
             fis.close();
