@@ -8,6 +8,9 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Created by betterFLY on 2018. 10. 27..
+ */
 public class RequestProcessor implements Runnable {
     private final static Logger logger = Logger.getLogger(RequestProcessor.class.getCanonicalName());
     private File rootDirectory;
@@ -83,7 +86,6 @@ public class RequestProcessor implements Runnable {
                     raw.flush();
                 } else {
                     // can't find the file
-
 //                    String body = new StringBuilder("<HTML>\r\n")
 //                            .append("<HEAD><TITLE>File Not Found</TITLE>\r\n")
 //                            .append("</HEAD>\r\n")
@@ -160,12 +162,10 @@ public class RequestProcessor implements Runnable {
             fis= new FileInputStream(file);
 
             OutputStream raw = new BufferedOutputStream(connection.getOutputStream());
-            Reader inputStream = new InputStreamReader(new BufferedInputStream(connection.getInputStream()), "UTF-8");
             Writer out = new OutputStreamWriter(raw);
 
             String result = setReadBuffer(file);
             String[] tokens = requestHeader.split("\\s+");
-            String method = tokens[0];
             String version = "";
             if (tokens.length > 2) {
                 version = tokens[2];

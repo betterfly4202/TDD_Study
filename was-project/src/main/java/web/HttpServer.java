@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Created by cybaek on 15. 5. 22..
+ * Created by betterFLY on 2018. 10. 27..
  */
 public class HttpServer {
     private static final Logger logger = Logger.getLogger(HttpServer.class.getCanonicalName());
@@ -29,7 +29,7 @@ public class HttpServer {
         this.port = port;
     }
 
-    public void start() throws IOException {
+    public void start(){
         ExecutorService pool = Executors.newFixedThreadPool(NUM_THREADS);
         try (ServerSocket server = new ServerSocket(port)) {
             logger.info("Accepting connections on port " + server.getLocalPort());
