@@ -1,4 +1,4 @@
-package com.tdd.ladders;
+package com.tdd.ladders.main;
 
 import java.util.HashMap;
 import java.util.Scanner;

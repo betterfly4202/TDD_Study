@@ -5,4 +5,6 @@ package com.tdd.ladders.item;
  * Date : 2018.12.09
  */
 public class Ladder {
+
+
 }
